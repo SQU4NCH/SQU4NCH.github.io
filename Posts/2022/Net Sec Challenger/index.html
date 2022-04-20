@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../Style/style.css">
+    <link rel="icon" type="image/x-icon" href="../../Imagens/28d85aa2c49068335acdd0afbac2f80a.jpg"> 
+<title>SQU4NCH</title>
+</head>
+
+<body>
+    <nav id="menu-h">
+        <a href="../../../index.html"><img class="objectImage" src="../../../logo.gif"></a>
+        <ul>
+            <li><a href="../../../whoami.html"><b>Whoami</b></a></li>
+            <li><a href="../../../Posts.html"><b>Posts</b></a></li>
+            <li><a href="../../../Certificações.html"><b>Certificações</b></a></li>
+        </ul>
+    </nav>
+ 
+       
+<div class="container">
+    <section>
+        <h1><b>~# TryHackMe - Net Sec Challenger</b></h1>
+
+        <img src="Imagens/logo.png" style="width: 650px;"><br><br>
+
+        <h3>Objetivo</h3>
+
+        <p>O objetivo dessa máquina é praticar alguns conceitos do modulo de segurança de rede</p><br>
+        <h3>Enumeração</h3>
+        <p>Usando o nmap, fiz uma varredura em todas as portas para saber quais estavam abertas e esse foi o resultado:</p><br>
+        
+        <p>~$ nmap -sS -Pn 10.10.223.210 -p-</p>     
+        <img src="Imagens/nmap.png"><br><br>
+        
+        <p>Com esse resultado já é possível responder as 3 primeiras perguntas</p><br>
+
+        <p>Então chegou a hora de começar a interagir com os serviços e pegar as flags, o primeiro deles é o servidor HTTP</p><br>
+        <img src="Imagens/http.png"><br><br>
+
+        <p>O próximo serviço que vamos interagir é o SSH</p><br>
+        <img src="Imagens/ssh.png"><br><br>
+
+        <p>E por último o serviço de FTP, que está rodando na porta 10021</p><br>
+        <img src="Imagens/ftp.png"><br><br>
+
+        <p>Somos informados que através de engenharia social conseguiram descobrir 2 nomes de usuários: eddie e quinn</p><br>
+        <p>Com essa informação, criei um arquivo com esses 2 nomes e usei o hydra para descobrir a senha de acesso deles ao serviço FTP</p><br>
+        <img src="Imagens/hydra.png" style="width: 900px;height: 200px;object-fit: cover; object-position: left;"><br><br>
+
+        <p>Agora descobri a senha para acessar o FTP, vou me logar e pegar a flag. </p><br>
+        <p>O usuário eddie não tem nada de relevante, então segui para o usuário quinn e encontrei o arquivo com a flag e fiz o download para a minha máquina</p><br>
+        <img src="Imagens/flag-ftp.png"><br><br>
+
+        <p>Na minha máquina agora é só ler o arquivo</p><br>
+        <img src="Imagens/cat-flag.png"><br><br>
+
+        <p>Como último desafio, temos que acessar o host na porta 8080 e concluir o desafio que ele pede lá</p><br>
+        <img src="Imagens/web.png"><br><br>
+
+        <p>O objetivo é fazer uma varredura usando o nmap, da forma mais discreta possível para não ser detectado pelo IDS</p><br>
+        <p>Com isso em mente eu realizei o seguinte scan:</p><br>
+        <img src="Imagens/nmap-evasion.png"><br><br>
+
+        <p>E esse foi o resultado:</p><br>
+        <img src="Imagens/web-evasion.png"><br><br>
+        
+    </section>
+</div>
+
+</body>
+</html>

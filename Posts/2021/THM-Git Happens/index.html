@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../Style/style.css">
+    <link rel="icon" type="image/x-icon" href="../../Imagens/28d85aa2c49068335acdd0afbac2f80a.jpg"> 
+<title>SQU4NCH</title>
+</head>
+
+<body>
+    <nav id="menu-h">
+        <a href="../../../index.html"><img class="objectImage" src="../../../logo.gif"></a>
+        <ul>
+            <li><a href="../../../whoami.html"><b>Whoami</b></a></li>
+            <li><a href="../../../Posts.html"><b>Posts</b></a></li>
+            <li><a href="../../../Certificações.html"><b>Certificações</b></a></li>
+        </ul>
+    </nav>
+ 
+       
+<div class="container">
+    <section>
+        <h1><b>~# TryHackMe - Git Happens</b></h1>
+
+        <img src="Imagens/Capa.png" style="width: 650px;"><br><br>
+
+        <h3>Objetivo</h3>
+
+        <p>O objetivo dessa máquina é encontrar a senha da aplicação, então vamos lá</p><br>
+        <h3>Enumeração</h3>
+        <p>Apesar do nome da sala ser bem sugestivo, vou seguir o costume e rodar o nmap para enumerar a máquina</p><br>
+        <img src="Imagens/nmap.png"><br><br>
+        <P>No resultado do nmap podemos ver que somente a porta 80 está aberta na máquina e também nos mostra que ele encontrou um diretório chamado .git</P><br>
+        <h3>Exploração</h3>
+        <p>Vou usar uma ferramenta chamada git-dumper para baixar esse repositório git pra minha máquina local</p><br>
+        <p>* Pra baixar a ferramenta: (https://github.com/arthaud/git-dumper)</p><br>
+        <img src="Imagens/git-dumper1.png">
+        <img src="Imagens/git-dumper2.png"><br><br>
+        <p>Agora que o repositório do git já está na minha máquina eu posso ver todos os commits que foram feitos na aplicação</p><br>
+        <img src="Imagens/git-log.png"><br><br>
+        <p>Entre os commits realizados teve um que me chamou a atenção, a descrição dele é: "Ofuscou o código-fonte. Espero que a segurança seja feliz!", vamos ver o que tem nele</p><br>
+        <img src="Imagens/commit.png" style="width: 900px;height: 1200px;object-fit: cover; object-position: left;"><br><br>
+        <p>Entre as partes removidas do código está o script de verificação de usuário e senha, nele podemos ver a senha da aplicação que está em claro</p><br>
+        <p>* Pra entender como o Git funciona: (https://git-scm.com/book/pt-br/v2)</p>
+    </section>
+</div>
+
+</body>
+</html>

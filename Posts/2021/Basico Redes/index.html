@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../Style/style.css">
+    <link rel="icon" type="image/x-icon" href="../../Imagens/28d85aa2c49068335acdd0afbac2f80a.jpg"> 
+<title>SQU4NCH</title>
+</head>
+
+<body>
+    <nav id="menu-h">
+        <a href="../../../index.html"><img class="objectImage" src="../../../logo.gif"></a>
+        <ul>
+            <li><a href="../../../whoami.html"><b>Whoami</b></a></li>
+            <li><a href="../../../Posts.html"><b>Posts</b></a></li>
+            <li><a href="../../../Certificações.html"><b>Certificações</b></a></li>
+        </ul>
+    </nav>
+ 
+       
+<div class="container">
+    <section>
+        <h1><b>~# Guia Básico de Redes</b></h1>
+
+        <p>A intenção desse "guia" é trazer uma visão geral do minimo que você precisa entender sobre redes para começar seus estudos no Hacking.</p><br>
+        <p>Claro que Redes é um assunto enorme, então aqui eu vou trazer só uma visão superficial para que a partir daqui você saiba o que procurar para estudar.</p><br>
+
+        <h2>Modelo OSI</h2>
+
+        <p>O modelo OSI (Open Systems Interconnection) é um modelo teorico, padronizado, que usamos para demonstrar as redes de computadores. Na prática, é na verdade o
+        modelo TCP / IP mais compacto no qual a rede do mundo real se baseia; no entanto, o modelo OSI, de muitas maneiras, é mais fácil de se obter uma compreensão inicial.</p><br>
+
+        <p>O modelo OSI tem 7 camadas:</p><br>
+        <img src="https://muirlandoracle.co.uk/wp-content/uploads/2020/02/OSI-Table.png"><br><br>
+        <h3>Camada 7: Aplicação</h3>
+
+        <p>A camada de aplicação do modelo OSI fornece essencialmente opções de rede para programas executados em um computador. Ela funciona quase que exclusivamente com aplicativos, fornecendo uma interface para eles usarem para transmitir dados. Quando os dados são fornecidos à camada de aplicação, eles são transmitidos para a camada de apresentação.
+        </p><br>
+        <h3>Camada 6: Apresentação</h3>
+
+        <p>A camada de apresentação recebe dados da camada de aplicação. Esses dados tendem a estar em um formato que o aplicação entende, mas não necessariamente em um formato padronizado que possa ser compreendido pela camada de aplicação no computador receptor. A camada de apresentação traduz os dados em um formato padronizado, além de lidar com qualquer criptografia, compressão ou outras transformações dos dados. Com isso concluído, os dados são passados para a camada de sessão.
+        </p><br>
+
+        <h3>Camada 5: Sessão</h3>
+
+        <p>Quando a camada de sessão recebe os dados formatados corretamente da camada de apresentação, ela verifica se pode estabelecer uma conexão com outro computador através da rede. Se não puder, ele retornará um erro e o processo não prosseguirá. Se uma sessão puder ser estabelecida, é tarefa da camada de sessão mantê-la, bem como cooperar com a camada de sessão do computador remoto para sincronizar as comunicações. A camada de sessão é particularmente importante porque a sessão que ela cria é exclusiva para a comunicação em questão. Isso é o que permite que você faça várias solicitações a diferentes endpoints simultaneamente, sem que todos os dados se misturem (pense em abrir duas guias em um navegador da web ao mesmo tempo)! Quando a camada de sessão registra com sucesso uma conexão entre o host e o computador remoto, os dados são passados para a Camada 4: a camada de transporte.
+        </p><br>
+
+        <h3>Camada 4: Transporte</h3>
+
+        <p>A camada de transporte é uma camada muito interessante que desempenha inúmeras funções importantes. Seu primeiro objetivo é escolher o protocolo pelo qual os dados serão transmitidos. Os dois protocolos mais comuns na camada de transporte são TCP (Transmission Control Protocol) e UDP (User Datagram Protocol); com o TCP, a transmissão é baseada em conexão, o que significa que uma conexão entre os computadores é estabelecida e mantida durante a solicitação. Isso permite uma transmissão confiável, pois a conexão pode ser usada para garantir que todos os pacotes cheguem ao lugar certo. Uma conexão TCP permite que os dois computadores permaneçam em comunicação constante para garantir que os dados sejam enviados a uma velocidade aceitável e que todos os dados perdidos sejam reenviados. Com UDP, o oposto é verdadeiro; pacotes de dados são essencialmente jogados para o computador receptor - se ele não consegue acompanhar, então é um problema (é por isso que uma transmissão de vídeo por algo como o Skype pode ser pixelada se a conexão for ruim). O que isso significa é que o TCP normalmente seria escolhido para situações em que a precisão é favorecida à velocidade (por exemplo, transferência de arquivo ou carregamento de uma página da web), e UDP seria usado em situações onde a velocidade é mais importante (por exemplo, streaming de vídeo).
+        </p><br>
+        <p>Com um protocolo selecionado, a camada de transporte divide a transmissão em pequenos pedaços (no TCP são chamados de segmentos, no UDP são chamados de datagramas), o que torna mais fácil transmitir a mensagem com sucesso.
+        </p><br>
+
+        <h3>Camada 3: Rede</h3>
+
+        <p>A camada de rede é responsável por localizar o destino de sua requisição. Por exemplo, a Internet é uma grande rede; quando você deseja solicitar informações de uma página da web, é a camada de rede que obtém o endereço IP da página e descobre o melhor caminho a seguir. Neste estágio, estamos trabalhando com o que é conhecido como endereçamento lógico (ou seja, endereços IP), que ainda são controlados por software. Os endereços lógicos são usados para fornecer ordem às redes, categorizando-as e permitindo-nos classificá-las adequadamente. Atualmente, a forma mais comum de endereçamento lógico é o formato IPV4, com o qual você provavelmente já está familiarizado (ou seja, 192.168.1.1 é um endereço comum para um roteador doméstico).
+        </p><br>
+
+        <h3>Camada 2: Enlace</h3>
+
+        <p>A camada de enlace de dados concentra-se no endereçamento físico da transmissão. Ele recebe um pacote da camada de rede (que inclui o endereço IP do computador remoto) e adiciona o endereço físico (MAC) do endpoint de recebimento. Dentro de cada computador habilitado para rede está uma placa de interface de rede (NIC) que vem com um endereço MAC (Media Access Control) exclusivo para identificá-la.
+        </p><br>
+
+        <p>Os endereços MAC são definidos pelo fabricante e literalmente gravados na placa; eles não podem ser alterados - embora possam ser falsificados. Quando as informações são enviadas através de uma rede, na verdade é o endereço físico que é usado para identificar para onde exatamente enviar as informações.
+        </p><br>
+
+        <p>Além disso, também é função da camada de enlace de dados apresentar os dados em um formato adequado para transmissão.
+        </p><br>
+
+        <p>A camada de enlace também desempenha uma função importante no recebimento de dados, pois verifica as informações recebidas para garantir que não tenham sido corrompidas durante a transmissão, o que pode acontecer quando os dados são transmitidos pela camada 1: a camada física.
+        </p><br>
+
+        <h3>Camada 1: Fisica</h3>
+
+        <p>A camada física está no hardware do computador. É aqui que os pulsos elétricos que constituem a transferência de dados em uma rede são enviados e recebidos. É função da camada física converter os dados binários da transmissão em sinais e transmiti-los pela rede, bem como receber os sinais de entrada e convertê-los de volta em dados binários.
+        </p><br>
+
+        <h2>Encapsulamento</h2>
+
+        <p>Conforme os dados são transmitidos para cada camada do modelo, mais informações contendo detalhes específicos para a camada em questão são adicionadas ao início da transmissão. Como exemplo, o cabeçalho adicionado pela Camada de Rede incluiria coisas como os endereços IP de origem e destino, e o cabeçalho adicionado pela Camada de Transporte incluiria (entre outras coisas) informações específicas do protocolo sendo usado. A camada de enlace de dados também adiciona uma peça no final da transmissão, que é usada para verificar se os dados não foram corrompidos na transmissão; isso também tem o bônus adicional de maior segurança, já que os dados não podem ser interceptados e adulterados sem quebrar o bloco. Todo esse processo é conhecido como encapsulamento; o processo pelo qual os dados podem ser enviados de um computador para outro.
+        </p><br>
+
+        <img src="https://muirlandoracle.co.uk/wp-content/uploads/2020/02/image.jpeg" style="max-width: 1000px;"><br><br>
+
+        <p>Observe que os dados encapsulados recebem um nome diferente em diferentes etapas do processo. Nas camadas 7,6 e 5, os dados são simplesmente referidos como dados. Na camada de transporte, os dados encapsulados são chamados de segmento ou datagrama (dependendo se TCP ou UDP foi selecionado como protocolo de transmissão). Na camada de rede, os dados são chamados de pacote. Quando o pacote é passado para a camada de enlace de dados, ele se torna um quadro e, no momento em que é transmitido pela rede, o quadro é dividido em bits. Quando a mensagem é recebida pelo segundo computador, ele inverte o processo - começando na camada física e avançando até atingir a camada de aplicação, removendo as informações adicionadas à medida que avançam. Isso é conhecido como desencapsulamento. Assim, você pode pensar nas camadas do modelo OSI como existindo dentro de cada computador com recursos de rede. Embora não seja tão claro na prática, todos os computadores seguem o mesmo processo de encapsulamento para enviar dados e desencapsulamento ao recebê-los.
+        </p><br>
+
+        <p>Os processos de encapsulamento e desencapsulamento são muito importantes - não apenas por causa de seu uso prático, mas também porque nos fornecem um método padronizado de envio de dados. Isso significa que todas as transmissões seguirão consistentemente a mesma metodologia, permitindo que qualquer dispositivo habilitado para rede envie uma solicitação a qualquer outro dispositivo acessível e tenha certeza de que será compreendido - independentemente de serem do mesmo fabricante; usar o mesmo sistema operacional; ou quaisquer outros fatores.
+        </p><br>
+        
+        <h2>O Modelo TCP/IP</h2>
+
+        <p>O modelo TCP / IP é, em muitos aspectos, muito semelhante ao modelo OSI. É alguns anos mais velho e serve como base para uma rede do mundo real. O modelo TCP / IP consiste em quatro camadas: Aplicação, Transporte, Internet e Interface de Rede. Entre eles, eles cobrem a mesma gama de funções que as sete camadas do Modelo OSI.
+        </p><br>
+
+        <img src="https://muirlandoracle.co.uk/wp-content/uploads/2020/02/image-4.png" style="max-width: 1000px;"><br><br>
+
+        <p>Nota: Algumas fontes recentes dividem o modelo TCP / IP em cinco camadas - dividindo a camada de interface de rede em camadas de Enlace de Dados e Física (como no modelo OSI). Isso é aceito e bem conhecido; no entanto, não é oficialmente definido (ao contrário das quatro camadas originais que são definidas no RFC1122). Você decide qual versão usar - ambas são geralmente consideradas válidas.
+        </p><br>
+
+        <p>Você poderia se perguntar por que nos incomodamos com o modelo OSI se ele não é realmente usado para nada no mundo real. A resposta a essa pergunta é simplesmente que o modelo OSI (por ser menos condensado e mais rígido que o modelo TCP / IP) tende a ser mais fácil para aprender a teoria inicial de rede.
+        </p><br>
+
+        <p>Os dois modelos combinam mais ou menos assim:
+        </p><br>
+
+        <img src="https://muirlandoracle.co.uk/wp-content/uploads/2020/02/image-3.png" style="max-width: 1000px;"><br><br>
+
+        <p>Os processos de encapsulamento e desencapsulamento funcionam exatamente da mesma maneira com o modelo TCP / IP e com o modelo OSI. Em cada camada do modelo TCP / IP, um cabeçalho é adicionado durante o encapsulamento e removido durante o desencapsulamento.
+        </p><br>
+
+        <p><b>Agora, vamos ao lado prático das coisas.</b></p><br>
+
+        <p>Um modelo em camadas é ótimo como um auxílio visual - ele nos mostra o processo geral de como os dados podem ser encapsulados e enviados através de uma rede, mas como isso realmente acontece?
+        </p><br>
+
+        <p>Quando falamos sobre TCP / IP, é muito bom pensar em uma tabela com quatro camadas, mas na verdade estamos falando sobre um conjunto de protocolos - conjuntos de regras que definem como uma ação deve ser realizada. O TCP/IP leva o nome dos dois mais importantes: o Transmission Control Protocol - TCP (que abordamos anteriormente no modelo OSI) que controla o fluxo de dados entre dois endpoints, e o Internet Protocol - IP, que controla como os pacotes são endereçados e enviados.
+        </p><br>
+
+        <p>Conforme mencionado anteriormente, o TCP é um protocolo baseado em conexão. Em outras palavras, antes de enviar qualquer dado via TCP, você deve primeiro formar uma conexão estável entre os dois computadores. O processo de formação dessa conexão é chamado de three-way handshake.
+        </p><br>
+
+        <p>Quando você tenta fazer uma conexão, seu computador primeiro envia uma solicitação especial ao servidor remoto indicando que deseja inicializar uma conexão. Essa solicitação contém algo chamado de bit SYN (abreviação de sincronizar), que basicamente faz o primeiro contato ao iniciar o processo de conexão. O servidor responderá então com um pacote contendo o bit SYN, bem como outro bit de "reconhecimento", denominado ACK. Por fim, seu computador enviará um pacote que contém o bit ACK sozinho, confirmando que a conexão foi configurada com sucesso. Com o three-way handshake concluído com êxito, os dados podem ser transmitidos de forma confiável entre os dois computadores. Quaisquer dados perdidos ou corrompidos na transmissão são reenviados, levando a uma conexão que parece não ter perdas.
+        </p><br>
+
+        <img src="https://muirlandoracle.co.uk/wp-content/uploads/2020/03/image-2.png" style="max-width: 1000px;"><br><br>
+
+        <h3>História:</h3>
+
+        <p>É importante entender exatamente por que os modelos TCP / IP e OSI foram criados originalmente. No início não havia padronização - diferentes fabricantes seguiam suas próprias metodologias e, consequentemente, sistemas feitos por diferentes fabricantes eram completamente incompatíveis quando se tratava de rede. O modelo TCP / IP foi introduzido pelo DoD americano em 1982 para fornecer um padrão - algo a ser seguido por todos os diferentes fabricantes. Isso resolveu os problemas de inconsistência. Mais tarde, o modelo OSI também foi introduzido pela International Organization for Standardization (ISO); no entanto, ele é usado principalmente como um guia mais abrangente para o aprendizado, já que o modelo TCP / IP ainda é o padrão no qual a rede moderna se baseia.
+        </p><br>
+
+        <h2>Ferramentas de Rede</h2>
+
+        <p>Espero que toda a teoria tenha feito sentido e agora você compreenda os modelos básicos por trás das redes de computadores. Vamos começar a dar uma olhada em algumas das ferramentas de rede de linha de comando que podemos usar em aplicações práticas. Muitas dessas ferramentas funcionam em outros sistemas operacionais, mas por uma questão de simplicidade, presumirei que você esteja executando o Linux
+        </p><br>
+
+        <h3>Ping</h3>
+
+        <p>O comando ping é usado quando queremos testar se uma conexão a um recurso remoto é possível. Normalmente, será um site na Internet, mas também pode ser para um computador em sua rede doméstica se você quiser verificar se está configurado corretamente. Ping funciona usando o protocolo ICMP, que é um dos protocolos TCP/IP um pouco menos conhecidos que foram mencionados anteriormente. O protocolo ICMP funciona na camada de rede do modelo OSI e, portanto, na camada de Internet do modelo TCP/IP. A sintaxe básica para ping é ``` ping <alvo> ```. Neste exemplo, estamos usando ping para testar se uma conexão de rede com o Google é possível:
+        </p><br>
+
+        <img src="https://muirlandoracle.co.uk/wp-content/uploads/2020/03/image-14.png" style="max-width: 1000px;"><br><br>
+
+        <p>Observe que o comando ping, na verdade, retornou o endereço IP do servidor do Google ao qual se conectou, em vez do URL solicitado. Essa é um aplicação secundária útil para ping, pois pode ser usado para determinar o endereço IP do servidor que hospeda um site. Uma das grandes vantagens do ping é que ele é quase onipresente em qualquer dispositivo habilitado para rede. Todos os sistemas operacionais o suportam, e até mesmo a maioria dos dispositivos embarcados pode usar ping!
+        </p><br>
+
+        <h3>Traceroute</h3>
+
+        <p>Continua...</p><br>
+
+
+    </section>
+</div>
+
+</body>
+</html>
