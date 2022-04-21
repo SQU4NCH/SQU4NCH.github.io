@@ -30,7 +30,7 @@
 
         <h2>Modelo OSI</h2>
 
-        <p>O modelo OSI (Open Systems Interconnection) é um modelo teorico, padronizado, que usamos para demonstrar as redes de computadores. Na prática, é na verdade o
+        <p>O modelo OSI (Open Systems Interconnection) é um modelo teórico, padronizado, que usamos para demonstrar as redes de computadores. Na prática, é na verdade o
         modelo TCP / IP mais compacto no qual a rede do mundo real se baseia; no entanto, o modelo OSI, de muitas maneiras, é mais fácil de se obter uma compreensão inicial.</p><br>
 
         <p>O modelo OSI tem 7 camadas:</p><br>
@@ -142,7 +142,7 @@
 
         <h3>Ping</h3>
 
-        <p>O comando ping é usado quando queremos testar se uma conexão a um recurso remoto é possível. Normalmente, será um site na Internet, mas também pode ser para um computador em sua rede doméstica se você quiser verificar se está configurado corretamente. Ping funciona usando o protocolo ICMP, que é um dos protocolos TCP/IP um pouco menos conhecidos que foram mencionados anteriormente. O protocolo ICMP funciona na camada de rede do modelo OSI e, portanto, na camada de Internet do modelo TCP/IP. A sintaxe básica para ping é ``` ping <alvo> ```. Neste exemplo, estamos usando ping para testar se uma conexão de rede com o Google é possível:
+        <p>O comando ping é usado quando queremos testar se uma conexão a um recurso remoto é possível. Normalmente, será um site na Internet, mas também pode ser para um computador em sua rede doméstica se você quiser verificar se está configurado corretamente. Ping funciona usando o protocolo ICMP, que é um dos protocolos TCP/IP um pouco menos conhecidos que foram mencionados anteriormente. O protocolo ICMP funciona na camada de rede do modelo OSI e, portanto, na camada de Internet do modelo TCP/IP. A sintaxe básica para ping é <b>ping [alvo]</b>. Neste exemplo, estamos usando ping para testar se uma conexão de rede com o Google é possível:
         </p><br>
 
         <img src="https://muirlandoracle.co.uk/wp-content/uploads/2020/03/image-14.png" style="max-width: 1000px;"><br><br>
@@ -152,7 +152,429 @@
 
         <h3>Traceroute</h3>
 
-        <p>Continua...</p><br>
+        <p>O Traceroute pode ser usado para mapear o caminho que sua solicitação segue enquanto segue para a máquina de destino. </p><br>
+
+        <p>A Internet é composta de muitos, muitos servidores e endpoints diferentes, todos interligados em rede. Isso significa que, para obter o conteúdo que você realmente deseja, primeiro você precisa passar por vários outros servidores. O Traceroute permite que você veja cada uma dessas conexões - permite que você veja todas as etapas intermediárias entre o seu computador e o recurso que você solicitou. A sintaxe básica para traceroute no Linux é esta: <b> traceroute [destino] </b>
+        </p><br>
+
+        <p>Por padrão, o utilitário traceroute do Windows (<b>tracert</b>) opera usando o mesmo protocolo ICMP que o ping utiliza, e o equivalente Unix opera sobre UDP. Isso pode ser alterado com switches em ambos os casos.
+        </p><br>
+
+        <img src="https://muirlandoracle.co.uk/wp-content/uploads/2020/03/image-15.png" style="max-width: 1000px;"><br><br>
+
+        <p>Você pode ver que demorou 13 saltos para ir do meu roteador (<b>_gateway</b>) ao servidor do Google em 216.58.205.46</p><br>
+
+        <h3>WHOIS</h3>
+
+        <p>Nomes de domínio - os salvadores anônimos da Internet.</p><br>
+
+        <p>Você pode imaginar como seria se lembrar do endereço IP de cada site que deseja visitar? Pensamento horrível.</p><br>
+
+        <p>Felizmente, temos domínios.</p><br>
+
+        <p>Um domínio se traduz em um endereço IP para que não precisemos nos lembrar dele (por exemplo, você pode digitar google.com, em vez do endereço IP do Google).
+        </p><br>
+
+        <p>Os domínios são alugados por empresas chamadas de registradores de domínio. Se você quiser um domínio, registre-se em um registrador e, em seguida, alugue o domínio por um determinado período.
+        </p><br>
+
+        <p>O Whois essencialmente permite que você pergunte para quem um nome de domínio está registrado. Na Europa, os dados pessoais são editados; entretanto, em outros lugares, você pode potencialmente obter uma grande quantidade de informações de uma pesquisa whois.
+        </p><br>
+
+        <p>As pesquisas Whois são muito fáceis de realizar. Basta usar <b>whois [domain]</b> para obter uma lista de informações disponíveis sobre o registro de domínio:
+        </p><br>
+
+        <img src="https://muirlandoracle.co.uk/wp-content/uploads/2020/03/image-16.png" style="max-width: 1000px;"><br><br>
+
+        <p>Esta é, comparativamente, uma quantidade muito pequena de informação, como muitas vezes pode ser encontrada. Observe que temos o nome de domínio, a empresa que registrou o domínio, a última renovação e quando é o próximo vencimento, e um monte de informações sobre servidores de nomes.
+        </p><br>
+
+        <h3>Dig</h3>
+
+        <p>Falamos sobre domínios no WHOIS - agora vamos falar sobre como eles funcionam.</p><br>
+
+        <p>Você já se perguntou como um URL é convertido em um endereço IP que seu computador pode entender? A resposta é um protocolo TCP / IP chamado DNS (Domain Name System).
+        </p><br>
+
+        <p>No nível mais básico, o DNS permite que solicitemos a um servidor especial o endereço IP do site que estamos tentando acessar. Por exemplo, se fizermos uma solicitação para www.google.com, nosso computador enviará primeiro uma solicitação para um servidor DNS especial (que seu computador já sabe como encontrar). O servidor irá então procurar o endereço IP do Google e o enviará de volta para nós. Nosso computador poderá então enviar a solicitação ao IP do servidor do Google.
+        </p><br>
+
+        <h4>Entendendo mais a fundo</h4>
+
+        <p>Você faz uma solicitação a um site. A primeira coisa que seu computador faz é verificar o cache local para ver se ele já tem um endereço IP armazenado para o site; se isso acontecer, ótimo. Caso contrário, ele passa para a próxima etapa do processo.
+        </p><br>
+
+        <p>Supondo que o endereço ainda não tenha sido encontrado, seu computador enviará uma solicitação ao que é conhecido como servidor DNS recursivo. Eles serão automaticamente conhecidos pelo roteador em sua rede. Muitos provedores de serviços de Internet (ISPs) mantêm seus próprios servidores recursivos, mas empresas como Google e OpenDNS também controlam servidores recursivos. É assim que seu computador sabe automaticamente para onde enviar a solicitação de informações: os detalhes de um servidor DNS recursivo são armazenados em seu roteador. Este servidor também manterá um cache de resultados para domínios populares; entretanto, se o site que você solicitou não estiver armazenado no cache, o servidor recursivo passará a solicitação para um servidor de nomes raiz.
+        </p><br>
+        
+        <p>Antes de 2004, havia exatamente 13 servidores DNS raiz no mundo. Hoje em dia existem muitos mais; no entanto, eles ainda podem ser acessados usando os mesmos 13 endereços IP atribuídos aos servidores originais (equilibrados para que você obtenha o servidor mais próximo ao fazer uma solicitação). Os servidores de nomes raiz basicamente controlam os servidores DNS no próximo nível abaixo, escolhendo um apropriado para redirecionar sua solicitação. Esses servidores de nível inferior são chamados de servidores Top-Level Domain.
+        </p><br>
+
+        <p>Os Top-Level Domain (TLD) são divididos em extensões. Então, por exemplo, se você estiver procurando por google.com, sua solicitação será redirecionada para um servidor TLD que manipula domínios <b>.com</b>. Se você estiver procurando por bbc.co.uk, sua solicitação será redirecionada para um servidor TLD que lida com domínios <b>.co.uk</b>. Assim como acontece com os servidores de nomes raiz, os servidores TLD controlam o próximo nível abaixo: Servidores autoritativos. Quando um servidor TLD recebe sua solicitação de informações, o servidor a transmite a um servidor de nomes Autoritativo apropriado.
+        </p><br>
+
+        <p>Servidores autoritativos são usados para armazenar registros DNS para domínios diretamente. Em outras palavras, todos os domínios do mundo terão seus registros DNS armazenados em um servidor de nomes autoritativo em algum lugar; eles são a fonte das informações. Quando sua solicitação chegar ao servidor de nomes autoritativo para o domínio que você está consultando, ele enviará as informações relevantes de volta para você, permitindo que seu computador se conecte ao endereço IP por trás do domínio que você solicitou.
+        </p><br>
+
+        <p>Quando você visita um site em seu navegador, tudo acontece automaticamente, mas também podemos fazer isso manualmente com uma ferramenta chamada <b>dig</b>. Como ping e traceroute, dig deve vir instalado automaticamente em sistemas Linux.
+        </p><br>
+
+        <p>Dig nos permite consultar manualmente servidores DNS recursivos de nossa escolha para obter informações sobre domínios: <b>dig [domain] @ [dns-server-ip]</b>
+        </p><br>
+
+        <p>É uma ferramenta muito útil para solução de problemas de rede.
+        </p><br>
+
+        <img src="https://muirlandoracle.co.uk/wp-content/uploads/2020/03/dig-demo.png" style="max-width: 1000px;"><br><br>
+
+        <p>Isso é muita informação. Dedicar algum tempo para aprender o que tudo isso significa é uma ideia muito boa. Em resumo, essa informação está nos dizendo que enviamos uma consulta e com sucesso (ou seja, sem erros) recebemos uma resposta completa - que, como esperado, contém o endereço IP do nome de domínio que consultamos.
+        </p><br>
+
+        <p>Outra informação interessante que o dig nos fornece é o TTL (Time To Live) do registro DNS consultado. Conforme mencionado anteriormente, quando seu computador consulta um nome de domínio, ele armazena os resultados em seu cache local. O TTL do registro informa ao seu computador quando parar de considerar o registro como válido - ou seja, quando ele deve solicitar os dados novamente, em vez de depender da cópia em cache.
+        </p><br>
+
+        <p>O TTL pode ser encontrado na segunda coluna da seção de respostas:</p><br>
+
+        <img src="https://muirlandoracle.co.uk/wp-content/uploads/2020/03/TTL.png" style="max-width: 1000px;"><br><br>
+
+        <p>É importante lembrar que o TTL (no contexto do cache DNS) é medido em segundos, portanto, o registro no exemplo irá expirar em dois minutos e trinta e sete segundos.
+        </p><br>
+
+        <h2>Serviços de rede</h2>
+
+        <h3>SMB</h3>
+
+        <p>SMB - Server Message Block Protocol - é um protocolo de comunicação cliente-servidor usado para compartilhar o acesso a arquivos, impressoras, portas seriais e outros recursos em uma rede.
+        </p><br>
+
+        <p>Os servidores disponibilizam sistemas de arquivos e outros recursos (impressoras, canais nomeados, APIs) aos clientes na rede. Os computadores clientes podem ter seus próprios discos rígidos, e também acessar os sistemas de arquivos e impressoras compartilhados nos servidores.
+        </p><br>
+
+        <p>O protocolo SMB é conhecido como protocolo de solicitação de resposta, o que significa que ele transmite várias mensagens entre o cliente e o servidor para estabelecer uma conexão. Os clientes se conectam a servidores usando TCP / IP (na verdade, NetBIOS sobre TCP / IP conforme especificado em RFC1001 e RFC1002), NetBEUI ou IPX / SPX.
+        </p><br>
+
+        <h4>Como o SMB funciona?</h4>
+
+        <img src="https://i.imgur.com/XMnru12.png" style="max-width: 1000px;"><br><br>
+
+        <p>Depois de estabelecer uma conexão, os clientes podem enviar comandos (SMBs) para o servidor que lhes permite acessar compartilhamentos, abrir arquivos, ler e gravar arquivos e, geralmente, fazer todo o tipo de coisas que você deseja fazer com um sistema de arquivos. No entanto, no caso de SMB, essas coisas são feitas pela rede.
+        </p><br>
+
+        <h4>Enumerando SMB</h4>
+
+        <p>Enumeração é o processo de coleta de informações sobre um alvo para encontrar vetores de ataque em potencial e ajudar na exploração.
+        </p><br>
+
+        <p>Esse processo é essencial para o sucesso de um ataque, pois perder tempo com exploits que não funcionam ou podem travar o sistema pode ser um desperdício de energia. A enumeração pode ser usada para reunir nomes de usuário, senhas, informações de rede, nomes de host, dados de aplicativos, serviços ou qualquer outra informação que possa ser valiosa para um invasor.
+        </p><br>
+
+        <p>Normalmente, existem unidades de compartilhamento SMB em um servidor que podem ser conectadas e usadas para visualizar ou transferir arquivos. O SMB geralmente pode ser um ótimo ponto de partida para um invasor que procura descobrir informações confidenciais - você ficaria surpreso com o que às vezes está incluído nesses compartilhamentos.
+        </p><br>
+
+        <b>Port Scan</b><br><br>
+
+        <p>A primeira etapa da enumeração é conduzir uma varredura de porta, para descobrir o máximo de informações possível sobre os serviços, aplicativos, estrutura e sistema operacional da máquina de destino.
+        </p><br>
+
+        <b>Enum4Linux</b><br><br>
+
+        <p>Enum4linux é uma ferramenta usada para enumerar compartilhamentos SMB em sistemas Windows e Linux. É basicamente um invólucro em torno das ferramentas do pacote Samba e facilita a extração rápida de informações do destino relativas ao SMB. Ele é instalado por padrão no Parrot e Kali, no entanto, se você precisar instalá-lo, pode fazê-lo a partir do github oficial.
+        </p><br>
+
+        <p>A sintaxe do Enum4Linux é agradável e simples: <b>enum4linux [opção] ip</b></p><br>
+
+        <p>
+        TAG&emsp;&emsp;&emsp;&ensp;             FUNÇÃO<br>
+        -U&emsp;&emsp;&emsp;&emsp;              obter lista de usuários<br>
+        -M&emsp;&emsp;&emsp;&emsp;              obter lista de máquinas<br>
+        -N&emsp;&emsp;&emsp;&emsp;              obter dump da lista de nomes (diferente de -U e-M)<br>
+        -S&emsp;&emsp;&emsp;&emsp;             obter lista de compartilhamento<br>
+        -P&emsp;&emsp;&emsp;&emsp;              obter informações de política de senha<br>
+        -G&emsp;&emsp;&emsp;&emsp;              obter grupo e lista de membros<br>
+        -A&emsp;&emsp;&emsp;&emsp;              todos os itens acima (enumeração básica completa)<br>
+        </p><br>
+
+        <h3>Telnet</h3>
+
+        <p>Telnet é um protocolo de aplicativo que permite que você, com o uso de um cliente telnet, se conecte e execute comandos em uma máquina remota que hospeda um servidor telnet.
+        </p><br>
+
+        <p>O cliente telnet estabelecerá uma conexão com o servidor. O cliente então se tornará um terminal virtual - permitindo que você interaja com o host remoto.
+        </p><br>
+
+        <b>Substituição</b><br><br>
+
+        <p>O Telnet envia todas as mensagens em texto não criptografado e não possui mecanismos de segurança específicos. Portanto, em muitos aplicativos e serviços, o Telnet foi substituído por SSH na maioria das implementações.
+        </p><br>
+
+        <h4>Como o Telnet funciona?</h4>
+
+        <p>O usuário se conecta ao servidor usando o protocolo Telnet, o que significa inserir "telnet" em um prompt de comando. O usuário então executa comandos no servidor usando comandos Telnet específicos no prompt Telnet. Você pode se conectar a um servidor telnet com a seguinte sintaxe: <b>telnet [ip] [porta]</b>
+        </p><br>
+
+        <h4>Enumerando Telnet</h4>
+
+        <p>A enumeração pode ser a chave na exploração de um serviço de rede mal configurado. No entanto, vulnerabilidades que podem ser potencialmente triviais de explorar nem sempre surgem sobre nós. Por esse motivo, especialmente quando se trata de enumerar os serviços de rede, precisamos ser minuciosos em nosso método.
+        </p><br>
+
+        <b>Port Scan</b><br><br>
+
+        <p>O Scan deve ser feito da forma que costumamos fazer, uma varredura de porta, para descobrir o máximo de informações que pudermos sobre os serviços, aplicativos, estrutura e sistema operacional da máquina de destino. É importante fazer um scan completo, e não só nas primeiras 1000 portas como no padrão do nmap, muitas vezes o Telnet está disponível mas funciona em algumas portas bem altas.
+        </p><br>
+
+        <h3>FTP</h3>
+
+        <p>O protocolo de transferência de arquivos (FTP) é, como o nome sugere, um protocolo usado para permitir a transferência remota de arquivos em uma rede. Ele usa um modelo cliente-servidor para fazer isso e - como veremos mais tarde - retransmite comandos e dados de uma maneira muito eficiente.
+        </p><br>
+
+        <h4>Como o FTP funciona?</h4>
+
+        <p>
+        Uma sessão de FTP típica opera usando dois canais:<br>
+        * um canal de comando (às vezes chamado de controle)<br>
+        * um canal de dados.<br>
+        </p><br>
+
+        <p>Como seus nomes indicam, o canal de comando é usado para transmitir comandos, bem como respostas a esses comandos, enquanto o canal de dados é usado para transferir dados.
+        </p><br>
+
+        <p>O FTP opera usando um protocolo cliente-servidor. O cliente inicia uma conexão com o servidor, o servidor valida todas as credenciais de login fornecidas e, em seguida, abre a sessão.
+        </p><br>
+
+        <p>Enquanto a sessão está aberta, o cliente pode executar comandos FTP no servidor.</p><br>
+
+        <b>Ativo vs Passivo</b><br><br>
+
+        <p>
+        O servidor FTP pode suportar conexões ativas ou passivas, ou ambas.<br>
+        * Em uma conexão FTP ativa, o cliente abre uma porta e escuta. O servidor é necessário para se conectar ativamente a ele.<br>
+        * Em uma conexão FTP passiva, o servidor abre uma porta e escuta (passivamente) e o cliente se conecta a ela.</p><br>
+
+        <p>Essa separação de informações de comando e dados em canais separados é uma forma de enviar comandos ao servidor sem ter que esperar que a transferência de dados atual termine. Se os dois canais estivessem interligados, você só poderia inserir comandos entre as transferências de dados, o que não seria eficiente para transferências de arquivos grandes ou conexões lentas com a Internet.
+        </p><br>
+
+        <h4>Enumerando FTP</h4>
+
+        <p>Acho que não preciso explicar mais como a enumeração é a chave ao atacar serviços e protocolos de rede. Se você travar usando qualquer ferramenta, você sempre pode usar <b>ferramenta [-h / -help / --help]</b> para descobrir mais sobre sua função e sintaxe. Da mesma forma, as páginas do manual são extremamente úteis para esse propósito. Eles podem ser alcançados usando <b> man [ferramenta] </b>.
+        </p><br>
+
+        <b>Método</b><br><br>
+
+        <p>Ao explorar um login de FTP é uma boa opção tentar um login anônimo, para ver quais arquivos podemos acessar - e se eles contêm alguma informação que possa nos permitir abrir um shell no sistema. Este é um caminho comum em desafios de CTF e imita uma implementação descuidada da vida real de servidores FTP.
+        </p><br>
+
+        <b>Recursos</b><br><br>
+
+        <p>Para fazer login em um servidor FTP, precisamos ter certeza de que um cliente FTP está instalado no sistema. Deve haver um instalado por padrão na maioria dos sistemas operacionais Linux, como Kali ou Parrot OS. Você pode testar se há um digitando <b>ftp</b> no console. Se você for levado a um prompt que diz: <b>ftp></b>, então você tem um cliente FTP funcionando em seu sistema. Caso contrário, é uma simples questão de usar <b>sudo apt install ftp</b> para instalar um.
+        </p><br>
+
+        <p>É importante notar que algumas versões vulneráveis do in.ftpd e algumas outras variantes do servidor FTP retornam respostas diferentes ao comando <b>cwd</b> para diretórios pessoais existentes e não existentes. Isso pode ser explorado porque você pode emitir comandos cwd antes da autenticação e, se houver um diretório inicial, é mais do que provável que haja uma conta de usuário para acompanhá-lo. Embora esse bug seja encontrado principalmente em sistemas legados, vale a pena conhecê-lo, como uma forma de explorar o FTP.</p><br>
+
+        <p>Esta vulnerabilidade está documentada em: https://www.exploit-db.com/exploits/20745 </p><br>
+
+        <h3>NFS</h3>
+
+        <p>NFS significa "Network File System" e permite que um sistema compartilhe diretórios e arquivos com outras pessoas em uma rede. Ao usar o NFS, os usuários e programas podem acessar arquivos em sistemas remotos quase como se fossem arquivos locais. Ele faz isso montando todo ou uma parte de um sistema de arquivos em um servidor. A parte do sistema de arquivos que é montada pode ser acessada por clientes com quaisquer privilégios atribuídos a cada arquivo.
+        </p><br>
+
+        <h4>Como o NFS funciona?</h4>
+
+        <p>Não precisamos entender a troca técnica em muitos detalhes para sermos capazes de explorar o NFS de forma eficaz - no entanto, se isso for algo do seu interesse, eu recomendaria este recurso: https://docs.oracle.com/cd/E19683-01/816-4882/6mb2ipq7l/index.html
+        </p><br>
+
+        <p>Primeiro, o cliente solicitará a montagem de um diretório de um host remoto em um diretório local, como se estivesse montando um dispositivo físico. O serviço de montagem atuará então para se conectar ao daemon de montagem usando RPC.
+        </p><br>
+
+        <p>O servidor verifica se o usuário tem permissão para montar qualquer diretório solicitado. Em seguida, ele retornará um identificador de arquivo que identifica exclusivamente cada arquivo e diretório que está no servidor.
+        </p><br>
+
+        <p>Se alguém deseja acessar um arquivo usando NFS, uma chamada RPC é feita para NFSD (o daemon NFS) no servidor. Esta chamada usa parâmetros como:
+        <br>* O identificador de arquivo<br>
+            * O nome do arquivo a ser acessado<br>
+            * O usuário, ID de usuário<br>
+            * O ID do grupo do usuário</p><br>
+
+        <p>Eles são usados para determinar os direitos de acesso ao arquivo especificado. Isso é o que controla as permissões do usuário, leitura e gravação de arquivos.
+        </p><br>
+
+        <p>Usando o protocolo NFS, você pode transferir arquivos entre computadores que executam Windows e outros sistemas operacionais não Windows, como Linux, MacOS ou UNIX.
+        </p><br>
+
+        <p>Um computador executando o Windows Server pode atuar como um servidor de arquivos NFS para outros computadores clientes não Windows. Da mesma forma, o NFS permite que um computador baseado no Windows que executa o Windows Server acesse arquivos armazenados em um servidor NFS não Windows.
+        </p><br>
+
+        <b>Mais informações</b><br><br>
+
+        <p>Aqui estão alguns recursos que explicam a implementação técnica e o funcionamento do NFS com mais detalhes do que os que cobri aqui.
+        </p><br>
+
+        <p>https://www.datto.com/library/what-is-nfs-file-share<br>
+
+            http://nfs.sourceforge.net/<br>
+            
+            https://wiki.archlinux.org/index.php/NFS</p><br>
+
+        <h4>Enumerando NFS</h4>
+
+        <b>Requisitos</b><br><br>
+
+        <p>Para fazer uma enumeração mais avançada do servidor NFS e compartilhamentos, vamos precisar de algumas ferramentas. O primeiro deles é a chave para interagir com qualquer compartilhamento NFS de sua máquina local: <b>nfs-common</b>.
+        </p><br>
+
+        <b>NFS-Common</b><br><br>
+
+        <p>É importante ter este pacote instalado em qualquer máquina que use NFS, seja como cliente ou servidor. Inclui programas como: lockd, statd, showmount, nfsstat, gssd, idmapd e mount.nfs. Primeiramente, as funções que mais chamam atenção são: "showmount" e "mount.nfs", pois eles serão mais úteis para nós quando se trata de extrair informações do compartilhamento NFS. Se desejar obter mais informações sobre este pacote, sinta-se à vontade para ler: https://packages.ubuntu.com/xenial/nfs-common.
+        </p><br>
+
+        <p>Você pode instalar o nfs-common usando <b>sudo apt install nfs-common</b>, ele faz parte dos repositórios padrão para a maioria das distribuições Linux, como o Kali 
+        </p><br>
+
+        <h4>Montando compartilhamentos NFS</h4>
+
+        <p>O sistema do seu cliente precisa de um diretório onde todo o conteúdo compartilhado pelo servidor host na pasta de exportação possa ser acessado. Você pode criar esta pasta em qualquer lugar do seu sistema. Depois de criar este ponto de montagem, você pode usar o comando "mount" para conectar o compartilhamento NFS ao ponto de montagem em sua máquina, assim:
+        </p><br>
+
+        <b>sudo mount -t nfs IP:share /tmp/mount/ -nolock</b><br><br>
+        <p>
+        TAG&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;  FUNÇÃO<br>
+        sudo&emsp;&emsp;&emsp;&emsp;&emsp;  Executar como root<br>
+        mount&emsp;&emsp;&emsp;&emsp;&emsp;Execute o comando de montagem<br>
+        -t nfs&emsp;&emsp;&emsp;&emsp;&ensp;Tipo de dispositivo a ser montado e, em seguida, especificando que é NFS<br>
+        IP:share&emsp;&emsp;&emsp;&ensp;O endereço IP do servidor NFS e o nome do compartilhamento que desejamos montar<br>
+        -nolock&emsp;&emsp;&emsp;&emsp;Especifica para não usar o bloqueio de NLM</p><br>
+
+        <h3>SMTP</h3>
+
+        <p>SMTP significa "Simple Mail Transfer Protocol". É utilizado para gerenciar o envio de e-mails. Para oferecer suporte aos serviços de e-mail, é necessário um par de protocolos, composto de SMTP e POP/IMAP. Juntos, eles permitem que o usuário envie mensagens de saída e recupere mensagens de entrada, respectivamente.
+        </p><br>
+
+        <p>
+            O servidor SMTP executa três funções básicas:<br>
+            * Ele verifica quem está enviando emails por meio do servidor SMTP.<br>
+            * Ele envia o e-mail de saída<br>
+            * Se o e-mail de saída não puder ser entregue, ele enviará a mensagem de volta ao remetente</p><br>
+
+        <p>A maioria das pessoas terá encontrado SMTP ao configurar um novo endereço de e-mail em alguns clientes de e-mail de terceiros, como Thunderbird; como quando você configura um novo cliente de e-mail, você precisará definir a configuração do servidor SMTP para enviar e-mails de saída.
+        </p><br>
+
+        <h4>POP e IMAP</h4>
+
+        <p>POP, ou "Post Office Protocol" e IMAP, "Internet Message Access Protocol", são protocolos de e-mail responsáveis pela transferência de e-mail entre um cliente e um servidor de e-mail. A principal diferença está na abordagem mais simplista do POP de baixar a caixa de entrada do servidor de e-mail para o cliente. Onde IMAP irá sincronizar a caixa de entrada atual, com novos e-mails no servidor, baixando qualquer coisa nova. Isso significa que as alterações na caixa de entrada feitas em um computador, via IMAP, persistirão se você sincronizar a caixa de entrada de outro computador. O servidor POP/IMAP é responsável por realizar este processo.
+        </p><br>
+
+        <h4>Como o SMTP funciona?</h4>
+
+        <p>A entrega de e-mail funciona da mesma forma que o sistema físico de entrega dos correios. O usuário fornecerá o e-mail (uma carta) e um serviço (o serviço de entrega postal) e, por meio de uma série de etapas, o entregará na caixa de entrada do destinatário (caixa de correio). A função do servidor SMTP neste serviço, é atuar como escritório de triagem, o e-mail (carta) é recolhido e enviado para este servidor, que o encaminha para o destinatário.
+        </p><br>
+
+        <p>Podemos mapear a jornada de um e-mail do seu computador até o destinatário da seguinte maneira:</p><br>
+
+        <img src="https://github.com/TheRealPoloMints/Blog/blob/master/Security%20Challenge%20Walkthroughs/Networks%202/untitled.png?raw=true" style="max-width: 1000px;"><br><br>
+
+        <p>1 - O agente de usuário de email, que é seu cliente de email ou um programa externo. conecta-se ao servidor SMTP de seu domínio, por exemplo, smtp.google.com. Isso inicia o handshake SMTP. Essa conexão funciona pela porta SMTP - que geralmente é 25. Depois que essas conexões forem feitas e validadas, a sessão SMTP é iniciada.
+        </p><br>
+
+        <p>2 - O processo de envio de e-mail pode agora começar. O cliente primeiro envia o remetente e o endereço de e-mail do destinatário - o corpo do e-mail e todos os anexos, para o servidor.
+        </p><br>
+
+        <p>3 - O servidor SMTP então verifica se o nome de domínio do destinatário e do remetente é o mesmo.
+        </p><br>
+
+        <p>4 - O servidor SMTP do remetente fará uma conexão com o servidor SMTP do destinatário antes de retransmitir o e-mail. Se o servidor do destinatário não puder ser acessado ou não estiver disponível, o e-mail é colocado em uma fila SMTP.
+        </p><br>
+
+        <p>5 - Em seguida, o servidor SMTP do destinatário verificará o e-mail recebido. Ele faz isso verificando se o domínio e o nome de usuário foram reconhecidos. O servidor irá então encaminhar o e-mail para o servidor POP ou IMAP, conforme mostrado no diagrama acima.
+        </p><br>
+
+        <p>6 - O e-mail aparecerá na caixa de entrada do destinatário.
+        </p><br>
+
+        <p>Esta é uma versão muito simplificada do processo e há muitos subprotocolos, comunicações e detalhes que não foram incluídos. Se você deseja aprender mais sobre este tópico, esta é uma análise com uma linguagem mais amigável para ler os detalhes técnicos: https://computer.howstuffworks.com/e-mail-messaging/email3.htm
+        </p><br>
+
+        <p>O software do servidor SMTP está prontamente disponível nas plataformas de servidor Windows, com muitas outras variantes do SMTP disponíveis para execução no Linux.
+        </p><br>
+
+        <b>Mais informações</b><br><br>
+
+        <p>Aqui está um recurso que explica a implementação técnica e o funcionamento do SMTP em mais detalhes do que os que eu cobri aqui.
+        </p><br>
+        <p>https://www.afternerd.com/blog/smtp/</p><br>
+
+        <h4>Enumerando SMTP</h4>
+
+        <b>Enumerando detalhes do servidor</b><br><br>
+
+        <p>Servidores de e-mail mal configurados ou vulneráveis geralmente podem fornecer uma base inicial em uma rede, mas antes de lançar um ataque, queremos uma impressão digital do servidor para tornar nosso direcionamento o mais preciso possível. Podemos usar o módulo <b>smtp_version</b> no MetaSploit para fazer isso. Como o próprio nome indica, ele fará a varredura em uma série de endereços IP e determinará a versão de todos os servidores de e-mail que encontrar.
+        </p><br>
+
+        <b>Enumerando usuários de SMTP</b><br><br>
+
+        <p>O serviço SMTP possui dois comandos internos que permitem a enumeração de usuários: VRFY (confirmando os nomes de usuários válidos) e EXPN (que revela o endereço real dos aliases do usuário e listas de e-mail (listas de mala direta). Usando esses comandos SMTP, podemos revelar uma lista de usuários válidos
+        </p><br>
+
+        <p>Podemos fazer isso manualmente, por meio de uma conexão telnet - no entanto, o Metasploit pode ajudar novamente, fornecendo um módulo útil apropriadamente chamado <b>smtp_enum</b> que fará o trabalho braçal para nós! Usar o módulo é uma simples questão de alimentá-lo com um host ou intervalo de hosts para verificar e uma lista de palavras contendo nomes de usuário para enumerar.
+        </p><br>
+
+        <b>Alternativas</b><br><br>
+
+        <p>É importante notar que essa técnica de enumeração funcionará para a maioria das configurações SMTP; no entanto, existem outras ferramentas não metasploit, como smtp-user-enum, que funcionam ainda melhor para enumerar contas de usuário no nível do sistema operacional no Solaris por meio do serviço SMTP. A enumeração é realizada inspecionando as respostas aos comandos VRFY, EXPN e RCPT TO.
+        </p><br>
+
+        <h3>MySQL</h3>
+
+        <p>Em sua definição mais simples, MySQL é um sistema de gerenciamento de banco de dados relacional (RDBMS) baseado em Structured Query Language (SQL). Muitas siglas? Vamos decompô-lo:
+        </p><br>
+
+        <b>Banco de dados</b><br><br>
+
+        <p>Um banco de dados é simplesmente uma coleção persistente e organizada de dados estruturados
+        </p><br>
+
+        <b>RDBMS</b><br><br>
+
+        <p>Um software ou serviço usado para criar e gerenciar bancos de dados com base em um modelo relacional. A palavra "relacional" significa apenas que os dados armazenados no conjunto de dados são organizados como tabelas. Cada tabela se relaciona de alguma forma com a "chave primária" ou outros fatores de "chave" uns dos outros.
+        </p><br>
+
+        <b>SQL</b><br><br>
+
+        <p>MYSQL é apenas um nome de marca para uma das implementações de software RDBMS mais populares. Como sabemos, ele usa um modelo cliente-servidor. Mas como o cliente e o servidor se comunicam? Eles usam uma linguagem, especificamente a Structured Query Language (SQL).
+        </p><br>
+
+        <p>Muitos outros produtos, como PostgreSQL e Microsoft SQL server, contêm a palavra SQL. Isso também significa que este é um produto que utiliza a sintaxe da Structured Query Language.
+        </p><br>
+
+        <h4>Como o MySQL funciona?</h4>
+
+        <p>O MySQL, como um RDBMS, é composto pelos programas servidores e utilitários que auxiliam na administração dos bancos de dados MySQL.
+        </p><br>
+
+        <p>O servidor lida com todas as instruções do banco de dados, como criação, edição e acesso aos dados. Ele recebe e gerencia essas solicitações e se comunica usando o protocolo MySQL. Todo esse processo pode ser dividido nestas etapas:
+        </p><br>
+
+        <p>1 - O MySQL cria um banco de dados para armazenamento e manipulação de dados, definindo o relacionamento de cada tabela.<br>
+            2 - Os clientes fazem solicitações fazendo declarações específicas em SQL.<br>
+            3 - O servidor responderá ao cliente com todas as informações solicitadas.</p><br>
+
+        <p>O MySQL pode ser executado em várias plataformas, seja Linux ou Windows. É comumente usado como um banco de dados de back-end para muitos sites importantes e constitui um componente essencial da pilha LAMP, que inclui: Linux, Apache, MySQL e PHP.
+        </p><br>
+
+        <b>Mais informações</b><br><br>
+
+        <p>Aqui estão alguns recursos que explicam a implementação técnica e o funcionamento do MySQL com mais detalhes do que os que cobri aqui:
+        </p><br>
+
+        <p>https://dev.mysql.com/doc/dev/mysql-server/latest/PAGE_SQL_EXECUTION.html <br>
+            https://www.w3schools.com/php/php_mysql_intro.asp</p><br>
+
+        <h4>Enumerando MySQL</h4>
+
+        <p>Provavelmente, o MySQL não será o primeiro ponto que você vai abordar para obter informações iniciais sobre o servidor. Você pode tentar usar a força bruta de senhas de conta padrão se realmente não tiver nenhuma outra informação; no entanto, na maioria dos cenários do CTF, é improvável que esse seja o caminho que você deve seguir.
+        </p><br>
+
+        <p>Normalmente, você terá obtido algumas credenciais iniciais enumerando outros serviços que poderá usar para enumerar e explorar o serviço MySQL. 
+        </p><br>
+
 
 
     </section>
