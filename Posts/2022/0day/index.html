@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../Style/style.css">
+    <link rel="icon" type="image/x-icon" href="../../Imagens/28d85aa2c49068335acdd0afbac2f80a.jpg"> 
+<title>SQU4NCH</title>
+</head>
+
+<body>
+    <nav id="menu-h">
+        <a href="../../../index.html"><img class="objectImage" src="../../../logo.gif"></a>
+        <ul>
+            <li><a href="../../../whoami.html"><b>Whoami</b></a></li>
+            <li><a href="../../../Posts.html"><b>Posts</b></a></li>
+            <li><a href="../../../Certificações.html"><b>Certificações</b></a></li>
+        </ul>
+    </nav>
+ 
+       
+<div class="container">
+    <section>
+        <h1><b>~# TryHackMe - 0day</b></h1>
+
+        <img src="Imagens/Capa.png" style="width: 650px;"><br><br>
+
+        <h3>Objetivo</h3>
+
+        <p>O objetivo dessa máquina segundo o autor é explorar um servidor Ubuntu, então vamos lá</p><br>
+        <h3>Enumeração</h3>
+        <p>Usando o nmap para fazer um scan na máquina descobri somente duas portas abertas</p><br>
+        <img src="Imagens/nmap.png"><br><br>
+        <p>A porta 22 rodando um OpenSSH 6.6.1p1 e a porta 80 rodando um Apache httpd 2.4.7</p><br>
+        <p>Na porta 80 está funcionando uma espécie de site pessoal do 0day</p><br>
+        <img src="Imagens/page.png" style="width: 850px;"><br><br>
+        <p>Vou continuar e enumerar alguns diretórios e arquivos no site</p><br>
+        <img src="Imagens/dirb.png"><br><br>
+        <p>De primeira, o que me chamou a atenção foi o diretório /backup e, ao entrar para ver o conteúdo, encontrei uma private key do ssh</p><br>
+        <img src="Imagens/ssh.png"><br><br>
+        <p>Copiei ela pra minha máquina e tentei me conectar via ssh ao servidor usando essa chave. Na primeira tentativa o ssh me pediu a passphrase,
+            então usei o john para descobrir a passphrase correta
+        </p><br>
+        <img src="Imagens/john.png"><br><br>
+        <p>Sabendo a passphrase, tentei novamente me conectar ao servidor usando alguns possíveis nomes de usuário, porém em todos eles além da chave era necessário
+            a senha do usuário. Como ainda não tenho a senha, resolvi mudar de ideia e tentar um outro caminho
+        </p><br>
+        <p>Voltei a analisar as informações que tinha e foi ai que percebi o diretório /cgi-bin</p><br>
+        <p>Comecei a procurar por vulnerabilidades para explorar o cgi-bin e encontrei a CVE 2014-6278, que possui um exploit publico</p><br>
+        <img src="Imagens/cve.png" style="width: 850px;"><br><br>
+        
+        <h3>Exploração</h3>
+        <p>Baixei o exploit para minha máquina e executei conseguindo a shell no servidor</p><br>
+        <img src="Imagens/reverse.png"><br><br>
+        <p>Essa shell está atrelada ao usuário www-data, que tem poucos privilégios, então o objetivo agora é conseguir elevar os privilégios até conseguir o root</p><br>
+        <p>Para isso, comecei a fazer um reconhecimento para pegar mais informações sobre o sistema</p><br>
+        <img src="Imagens/version-os.png"><br>
+        <img src="Imagens/kernel.png"><br><br>
+        <p>Como podemos ver, o sistema tem uma versão de kernel um pouco antiga e que possui vários exploits públicos, que podem ser usados para escalar privilégios</p><br>
+        <p>Escolhi um desses exploits e fiz o upload para a máquina alvo</p><br>
+        <img src="Imagens/download.png"><br><br>
+        <p>Entretanto, ao tentar executar o exploit na máquina alvo, não obtive sucesso e recebi o seguinte erro: gcc: error trying to exec 'cc1': execvp: No such file or directory</p><br>
+        <img src="Imagens/error.png"><br><br>
+        <p>Depois de algumas pesquisas descobri que esse erro estava ocorrendo porque a variável PATH não estava informando o caminho correto dos comandos que o exploit
+            utilizava, então copiei o conteúdo da variável PATH da minha máquina para a máquina alvo (isso porque tanto o kali quanto o ubuntu são baseados no debian) e 
+            então executei nomavente o exploit
+        </p><br>
+        <img src="Imagens/root.png"><br><br>
+        <p>Dessa vez tudo funcionou corretamente, então agora já conseguimos executar comandos no sistema como root</p><br>
+        <img src="Imagens/root2.png"><br><br>
+        
+
+
+    </section>
+</div>
+
+</body>
+</html>
