@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../Style/style.css">
+    <link rel="icon" type="image/x-icon" href="../../Imagens/28d85aa2c49068335acdd0afbac2f80a.jpg"> 
+<title>SQU4NCH</title>
+<style>
+img {
+    display: block
+}
+</style>
+</head>
+
+<body>
+    <nav id="menu-h">
+        <a href="../../../index.html"><img class="objectImage" src="../../../logo.gif"></a>
+        <ul>
+            <li><a href="../../../whoami.html"><b>Whoami</b></a></li>
+            <li><a href="../../../Posts.html"><b>Posts</b></a></li>
+            <li><a href="../../../Certificações.html"><b>Certificações</b></a></li>
+        </ul>
+    </nav>
+ 
+       
+<div class="container">
+    <section>
+        <h1><b>~# NPP - Semana 11 - WEB Hacking (Externo)</b></h1>
+
+        <img src="Imagens/Capa.png" style="width: 450px;"><br><br>
+
+        <h3>Objetivo</h3>
+
+        <p>O objetivo desse lab é praticar o conteúdo aprendido no módulo de Web Hacking do curso NPP da DESEC e simular um Pentest Web Externo</p><br>
+        <h3>~$ lab 01</h3>
+        <img src="Imagens/lab01.png" style="width: 650px;"><br><br>
+        <p>Ao acessar o endereço fornecido no lab me deparei com um formulário de login</p><br>
+        <img src="Imagens/01-1.png"><br><br>
+        <p>Com o intuito de testar o formulário de login enviei como nome de usuário e senha o caracter "\" para ver como a aplicação iria se comportar e esse foi o resultado:</p><br>
+        <img src="Imagens/01-2.png"><br><br>
+        <p>Como o erro apresentado pelo banco de dados pude perceber que a aplicação está vulnerável a sql injection</p><br>
+        <p>Sabendo disso vou enviar um query sql para tentar dar um bypass e me autenticar na aplicação</p><br>
+        <img src="Imagens/01-3.png"><br><br>
+        <p>Enviando essa query foi possível me autenticar na aplicação e conseguir a flag para pontuar</p><br>
+        
+        <h3>~$ lab 02</h3>
+        <img src="Imagens/lab02.png" style="width: 650px;"><br><br>
+        <p>Ao acessar o endereço fornecido no lab a aplicação retorna uma página com uma mensagem de "desativado"</p><br>
+        <img src="Imagens/02-1.png"><br><br>
+        <p>Para conseguir mais informações sobre a aplicação realizei uma enumeração para encontrar possíveis diretórios e arquivos e esse foi o resultado:</p><br>        
+        <img src="Imagens/02-2.png"><br><br>
+        <p>Levando em consideração o objetivo do lab, o diretório que me chamou a atenção foi o /promo, e ao acessar o diretório podemos ver uma página com um formulário
+            para enviar o voucher da promoção mas que está desativado</p><br>
+        <img src="Imagens/02-3.png" style="width: 850px;"><br><br>
+        <p>Ao inspecionar o código fonte encontrei a tag 'disabled' que estava impedindo de enviar o formulário da promoção</p><br>
+        <img src="Imagens/02-4.png"><br><br>
+        <p>Removi essa tag e com isso consegui fazer a requisição, então fui redirecionado para outra página mas ainda não era possível receber o voucher</p><br>
+        <img src="Imagens/02-5.png"><br><br>
+        <p>Para entender o que estava acontecendo, usei um proxy para interceptar as requisições e ver como a aplicação está funcionando; 
+            no burp descobri que a aplicação estava enviando dois parametros: email e promo; e que o segundo estava sendo enviado em branco</p><br>
+        <img src="Imagens/02-6.png"><br><br>
+        <p>Refiz a requisição realizando alguns testes e completando o segundo parametro com valores verdadeiros, como por exemplo: True e 1</p><br>
+        <p>Quando o parametro promo recebeu o valor 1 foi possível receber o voucher</p><br>
+        <img src="Imagens/02-7.png" style="width: 1000px; height: 265px;  object-fit: cover; object-position: left;"><br><br>
+
+        <h3>~$ lab 03</h3>
+        <img src="Imagens/lab03.png" style="width: 650px;"><br><br>
+        <p>Ao acessar o endereço fornecido no lab a aplicação retorna uma página com o nome da empresa</p><br>
+        <img src="Imagens/03-1.png"><br><br>
+        <p>Para conseguir mais informações sobre o host fiz uma enumeração e descobri alguns arquivos e diretórios</p><br>
+        <img src="Imagens/03-2.png"><br><br>
+        <p>No diretório /system, existe um campo para verificar se o host está ativo ou não, então coloquei um ip qualquer e fiz o teste e aparentemente a 
+            aplicação está fazendo um ping no ip que eu coloco</p><br>
+        <img src="Imagens/03-3.png" style="width:950px;"><br><br>
+        <p>Tentei concatenar com o comando ping algum outro comando e ver se ele executava no sistema, porém não tive resposta, então tentei alguns payloads
+            diferentes até que encontrei um que funcionou</p><br>
+        <img src="Imagens/03-4.png"><br><br>
+        <p>Agora que já é possível executar comandos no sistema, é só pegar a flag e pontuar</p><br>
+        <img src="Imagens/03-5.png"><br><br>
+
+        <h3>~$ lab 04</h3>
+        <img src="Imagens/lab04.png" style="width: 650px;"><br><br>
+        <p>A principio no endereço está rodando uma aplicação comum do grupo business corp, vou começar a enumeração e listar alguns subdominios</p><br>
+        <img src="Imagens/04-1.png"><br><br>
+        <p>Os subdominios econtrados não possuem nenhum conteúdo que seja importante, então vou seguir e enumerar alguns diretórios e arquivos nesses subdominios</p><br>
+        <img src="Imagens/04-2.png"><br><br>
+        <p>No diretório /blog está rodando um blog da empresa, feito em wordpress</p><br>
+        <img src="Imagens/04-3.png" style="width:950px;"><br><br>
+        <p>Sabendo que o blog está usando o Wordpress, comecei a fazer minha enumeraçãoe consultando o readme.html consegui descobrir a versão do wordpress que está 
+            sendo usado</p><br>
+        <img src="Imagens/04-4.png"><br><br>
+        <p>Continuando com a enumeração realizei uma varredura usando o WPScan para encontrar possíveis vulnerabilidades no wordpress</p><br>
+        <img src="Imagens/04-5.png"><br><br>
+        <p>Aparentemente o wordpress está usando um plugin vulnerável a sql injection, a ferramenta tbm retorna que é possível acessar e ler o readme.txt
+            e ao fazer isso pude comprovar a versão exata do plugin</p><br>
+        <img src="Imagens/04-6.png"><br><br>
+        <p>Com essas informações fui buscar algum exploit público para validar se realmente a aplicação está vulnerável, e acabei encontrando esse exploit no exploit-db</p><br>
+        <img src="Imagens/04-7.png" style="width:1000px;"><br><br>
+        <p>Seguindo a poc que estava presente no exploit tive a confirmação que a aplicação está vulnerável a sql injection</p><br>
+        <img src="Imagens/04-8.png"><br><br>
+        <p>Agora que tenho acesso ao banco de dados posso fazer consultas para descobrir o usuário e a senha</p><br>
+        <p>Realizando a consulta consegui o usuário porém a senha está cifrada, então foi necessário usar o john para quebrar a hash</p><br>
+        <img src="Imagens/04-9.png"><br><br>
+
+        <h3>~$ lab 05</h3>
+        <img src="Imagens/lab05.png" style="width: 650px;"><br><br>
+        <p>Com o usuário e senha que descobri no lab anterior consigo me conectar no painel de administração do site</p><br>
+        <img src="Imagens/05-1.png" style="width:950px;"><br><br>
+        <p>Agora que estou logado procurei algum lugar onde poderia enviar algum código para aplicação, e encontrei na aba de editar temas; então editei 
+            o código da página e coloquei uma web shell em php em uma das páginas</p><br>
+        <img src="Imagens/05-2.png"><br><br>
+        <p>Agora que consegui colocar uma web shell nop site, é só entrar na página que contem o código e executar comandos no servidor</p><br>
+        <img src="Imagens/05-3.png"><br><br>
+        <p>Com a web shell funcionando e executando comandos no servidor, é só pegar a flag para pontuar</p><br>
+
+        <h3>~$ lab 06</h3>
+        <img src="Imagens/lab06.png" style="width: 650px;"><br><br>
+        <p>Ainda aproveitando a web shell vou buscar pelo arquivo de configuração do wordpress para encontrar a senha do usuário do mysql</p><br>
+        <p>Listando o conteúdo da raiz do wordpress podemos ver o arquivo, agora é só ler o arquivo e descobrir a senha</p><br>
+        <img src="Imagens/06-1.png"><br><br>
+
+        <h3>~$ lab 07</h3>
+        <img src="Imagens/lab07.png" style="width: 650px;"><br><br>
+        <p>Acessando o site do rh da business corp podemos ver que ele tem duas opções no menu, uma com o conteudo sobre a empresa e uma para enviar o curriculo</p><br>
+        <img src="Imagens/07-1.png" style="width:950px;"><br><br>
+        <p>Entrei na aba para enviar o curriculo e acrescentei uma "\" ao final do parametro que estava sendo enviado via GET e a aplicação retornou um erro,
+            mostrando que o parametro está vulnerável </p><br>
+        <img src="Imagens/07-2.png"><br><br>
+
+        <h3>~$ lab 08</h3>
+        <img src="Imagens/lab08.png" style="width: 650px;"><br><br>
+        <p>No intuito de conseguir o rce vou tentar enviar um arquivo malicioso contento uma web shell em php no formulário para envio de currículos</p><br>
+        <p>A aplicação faz um filtro por extensão e pelo magic number, então o aquivo malicioso deve terminar com o .pdf e conter magic number de um arquivo
+             em pdf, ele ficou assim:</p><br>
+        <img src="Imagens/08-1.png"><br><br>
+        <p>Dessa forma consegui enviar o arquivo para aplicação, agora tenho que descobrir para qual lugar ele foi enviado, para isso realizei uma enumeração
+            para descobrir possíveis diretórios</p><br>
+        <p>A aplicação faz um bloqueio para scan com as ferramentas mais conhecidas, esse bloqueio é feito atraves do user-agent, então modifiquei o meu 
+            user-agent e consegui fazer a varredura</p><br>
+        <img src="Imagens/08-2.png"><br><br>
+        <p>Descobri que meu arquivo foi enviado para o diretório /uploads</p><br>
+        <p>Então aproveitei a falha de LFI que encontrei no lab anterior para tentar executar o arquivo, porém a aplicação coloca um .php ao final do arquivo quando ele
+            é chamado, acrescentei um null byte ( %00 ) para tentar eliminar o .php mas mesmo assim não consegui, tentei outros caracteres e nenhum funcionou</p><br>
+        <p>Como isso não estava funcionando decidi seguir uma outra linha de ação e testei o uso do php wrapper, e dessa vez funcionou, com isso consegui executar
+            comandos no sistema</p><br>
+        <img src="Imagens/08-3.png"><br>
+        <img src="Imagens/08-4.png"><br><br>
+        <p>Com acesso ao sistema, já é possível ler as informações do usuário</p><br>
+
+        <h3>~$ lab 09</h3>
+        <img src="Imagens/lab09.png" style="width: 650px;"><br><br>
+        <p>Com o RCE que consegui no lab passado, podemos ler arquivos no sistema, incluindo alguns arquivos sensíveis</p><br>
+        <p>Entre eles o arquivo /var/www/html/prog/db.php que contem a senha e o usuário do banco de dados</p><br>
+
+
+
+    </section>
+</div>
+
+</body>
+</html>
