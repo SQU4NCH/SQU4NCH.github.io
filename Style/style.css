@@ -104,3 +104,15 @@ h1,h2,h3,h4,h5,h6{
     background-color: #7ED957;
     color: black;
 }
+
+@media (max-width: 900px){
+    img{
+        width: 100%;
+    }
+}
+
+@media (min-width: 900px){
+    img{
+        max-width: 850px;
+    }
+}

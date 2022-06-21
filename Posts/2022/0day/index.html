@@ -30,7 +30,7 @@
     <section>
         <h1><b>~# TryHackMe - 0day</b></h1>
 
-        <img src="Imagens/capa.png" style="width: 650px;"><br><br>
+        <img src="Imagens/capa.png" style="max-width: 650px;"><br><br>
 
         <h3>Objetivo</h3>
 
@@ -40,7 +40,7 @@
         <img src="Imagens/nmap.png"><br><br>
         <p>A porta 22 rodando um OpenSSH 6.6.1p1 e a porta 80 rodando um Apache httpd 2.4.7</p><br>
         <p>Na porta 80 está funcionando uma espécie de site pessoal do 0day</p><br>
-        <img src="Imagens/page.png" style="width: 850px;"><br><br>
+        <img src="Imagens/page.png" style="max-width: 850px;"><br><br>
         <p>Vou continuar e enumerar alguns diretórios e arquivos no site</p><br>
         <img src="Imagens/dirb.png"><br><br>
         <p>De primeira, o que me chamou a atenção foi o diretório /backup e, ao entrar para ver o conteúdo, encontrei uma private key do ssh</p><br>
@@ -54,7 +54,7 @@
         </p><br>
         <p>Voltei a analisar as informações que tinha e foi ai que percebi o diretório /cgi-bin</p><br>
         <p>Comecei a procurar por vulnerabilidades para explorar o cgi-bin e encontrei a CVE 2014-6278, que possui um exploit publico</p><br>
-        <img src="Imagens/cve.png" style="width: 850px;"><br><br>
+        <img src="Imagens/cve.png" style="max-width: 850px;"><br><br>
         
         <h3>Exploração</h3>
         <p>Baixei o exploit para minha máquina e executei conseguindo a shell no servidor</p><br>
