@@ -218,20 +218,12 @@ Obrigado pela leitura!
 
 # Referências
 
-HTTP Desync Attacks [\[Link\]](https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn)
-
-The Powerful HTTP Request Smuggling [\[Link\]](https://ricardoiramar.medium.com/the-powerful-http-request-smuggling-af208fafa142)
-
-CVE-2021-40346 [\[Link\]](https://jfrog.com/blog/critical-vulnerability-in-haproxy-cve-2021-40346-integer-overflow-enables-http-smuggling/)
-
-rfc2616 [\[Link\]](https://datatracker.ietf.org/doc/html/rfc2616/)
-
-HTTP Overview [\[Link\]](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
-
-Reverse Proxy vs Load Balancer [\[Link\]](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
-
-Proxy servers and tunneling [\[Link\]](https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling)
-
-Transfer Encoding [\[Link\]](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Transfer-Encoding)
-
-Content Length [\[Link\]](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Content-Length)
+- James Kettle. HTTP Desync Attacks: Request Smuggling Reborn
+- Ricardo Iramar dos Santos. The Powerful HTTP Request Smuggling
+- Ori Hollander, Or Peles, Critical Vulnerability in HAProxy (CVE-2021-40346): Integer Overflow Enables HTTP Smuggling
+- RFC2616. Hypertext Transfer Protocol
+- Nginx. What is a Reverse Proxy vs. Load Balancer?
+- Mdn Web Docs. An overview of HTTP
+- Mdn Web Docs. Proxy servers and tunneling
+- Mdn Web Docs. Transfer-Encoding
+- Mdn Web Docs. Content-Length
