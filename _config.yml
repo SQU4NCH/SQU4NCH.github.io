@@ -15,16 +15,16 @@
 minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 # Site Settings
 locale                   : "pt-BR"
-title                    : "SQU4NCH"
-title_separator          : "-"
+title                    : "LTx Security"
+title_separator          : "|"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "SQU4NCH"
-description              : "Red Team Analyst and Pentester - DCPT - eJPT"
+description              : "Conteúdo sobre Hacking e Segurança Ofensiva"
 url                      : "https://squ4nch.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "/assets/images/main/avatar.png"
+logo                     : "/assets/images/main/Logo.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -115,6 +115,9 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/leo-teodoro/"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://www.instagram.com/ltxsecurity/"
 
 # Site Footer
 footer:
