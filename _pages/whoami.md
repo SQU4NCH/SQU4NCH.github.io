@@ -5,7 +5,7 @@ layout: archive
 author_profile: true
 ---
 
-- Atualmente trabalho como Analista de Red Team e Pentester
+- Profissional com experiência em Red Team e Pentest, atuando como analista de segurança ofensiva em projetos para empresas de médio e grande porte, aplicando técnicas ofensivas em aplicações Web, APIs, redes e aplicações móveis Android.
 
 ## Educação
 - Cursando Ciência da Computação
