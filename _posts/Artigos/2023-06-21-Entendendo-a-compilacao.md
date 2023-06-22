@@ -64,6 +64,6 @@ Com as instruções em assembly criadas, é a hora do assembler converter essas 
 
 Agora que o arquivo objeto foi criado, basta o linker combinar o arquivo "hello.o" em um objeto executável, nesse exemplo o nome escolhido para esse executável foi "hello.exe".
 
-Após todo esse processo, temos como resultado um programa funsional.
+Após todo esse processo, temos como resultado um programa funcional.
 
 ![](/assets/images/Entendendo-compilacao/06.png){: .align-center}
