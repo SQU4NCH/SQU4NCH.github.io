@@ -5,7 +5,7 @@ layout: archive
 author_profile: true
 ---
 
-- Profissional com experiência em Red Team e Pentest, atuando como analista de segurança ofensiva em projetos para empresas de médio e grande porte, aplicando técnicas ofensivas em aplicações Web, APIs, redes e aplicações móveis Android.
+- Profissional com mais de 6 anos de experiência na área de TI, atualmente focado na área de segurança da informação ofensiva (Red Team e Pentest), atuando como analista de segurança ofensiva em projetos para empresas de médio e grande porte, aplicando técnicas ofensivas em aplicações Web, APIs, redes e aplicações móveis Android. Hall of Fame no programa de bug bounty da NASA.
 
 ## Educação
 - Cursando Ciência da Computação
