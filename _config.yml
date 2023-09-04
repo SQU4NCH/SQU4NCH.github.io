@@ -118,6 +118,9 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/ltxsecurity/"
+    - label: "TryHackMe"
+      icon: "fas fa-user-secret"
+      url: "https://tryhackme.com/p/SQU4NCH"
 
 # Site Footer
 footer:
