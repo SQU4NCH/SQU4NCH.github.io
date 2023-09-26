@@ -1,24 +1,28 @@
 ---
-title: "Whoami"
+title: "Hi, I'm Leonardo Teodoro (SQU4NCH)"
 permalink: /whoami/
 layout: archive
 author_profile: true
 ---
 
-- Profissional com mais de 6 anos de experiência na área de TI, atualmente focado na área de segurança da informação ofensiva (Red Team e Pentest), atuando como analista de segurança ofensiva em projetos para empresas de médio e grande porte, aplicando técnicas ofensivas em aplicações Web, APIs, redes e aplicações móveis Android. Hall of Fame no programa de bug bounty da NASA.
+## ~$ Whoami
 
-## Educação
-- Cursando Ciência da Computação
-- Graduado em Defesa Cibernética
-- Curso de Extensão em Cyberwarfare and Terrorism
-- Pós-graduação em Segurança Ofensiva e Inteligência Cibernética
-- Especialização em Ethical Hacking e CyberSecurity
+- I'm a Red Team Analyst and Pentester
+- I'm studying Web Hacking, Web API and Mobile Exploitation
+- I'm currently preparing to eWPTX and OSWE
 
-## Certificações
+## ~$ Formal Education
+- Undergraduate in Computer Science
+- Degree in Cyber Defense
+- University extension in Cyberwarfare and Terrorism
+- Postgraduate Degree in Offensive Security and Cyber Intelligence
+- Postgraduate Degree in Ethical Hacking and CyberSecurity
+
+## ~$ Some Certifications
 - DCPT - Desec Certified Penetration Tester
 - SCWAP - Sec4US Certified Web API Pentester
 - eJPT - eLearnSecurity Junior Penetration Tester
 - CAP - Certified AppSec Practitioner
 
-## CVEs publicadas
+## ~$ CVEs
 - CVE-2023-0125
