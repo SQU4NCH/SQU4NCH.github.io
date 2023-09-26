@@ -8,8 +8,8 @@ author_profile: true
 ## ~$ Whoami
 
 - I'm a Red Team Analyst and Pentester
-- I'm studying Web Hacking, Web API and Mobile Exploitation
-- I'm currently preparing to eWPTX and OSWE
+- Studying web hacking, web API security, and mobile exploitation
+- Currently preparing for the eWPTX and OSWE certifications
 
 ## ~$ Formal Education
 - Undergraduate in Computer Science
