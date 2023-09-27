@@ -19,10 +19,11 @@ author_profile: true
 - Postgraduate Degree in Ethical Hacking and CyberSecurity
 
 ## ~$ Some Certifications
-- DCPT - Desec Certified Penetration Tester
-- SCWAP - Sec4US Certified Web API Pentester
-- eJPT - eLearnSecurity Junior Penetration Tester
-- CAP - Certified AppSec Practitioner
+<p align="left">
+    <img src="/assets/images/main/dcpt-logo.png" alt="dcpt" width="80" height="80"/> 
+    <img src="https://sec4us.com.br/static/images/logo-scwap.png" alt="scwap" width="80" height="80"/> 
+    <img src="https://security.ine.com/wp-content/uploads/2023/08/eJPT-1.png" alt="ejptv2" width="80" height="80"/>
+</p>
 
 ## ~$ CVEs
 - CVE-2023-0125
