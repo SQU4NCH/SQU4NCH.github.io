@@ -40,7 +40,7 @@ Uma dica para quem está nessa parte é: documente todo o processo de exploraç�
 
 Peguei alguns projetos na vida real bem parecidos com os vistos aqui, então, para mim, o Pentest Experience foi bem proveitoso também, porque acabou me ajudando um pouco no trabalho
 
-Após alguns logos meses, finalmente terminei os 9 projetos, chegou a hora de marcar a prova
+Após alguns longos meses, finalmente terminei os 9 projetos, chegou a hora de marcar a prova
 
 # A prova
 
@@ -56,7 +56,7 @@ Então aqui vai uma dica: respeite seu corpo e se prepare para a prova, descanse
 
 # A prova - retake
 
-Após a minha reprovação, pensei até e não realizar o exame novamente, fiquei um pouco frustrado e também desanimado. Passados 4 dias eu parei pra refletir sobre o acontecido e então decidi refazer a prova, peguei o retake (se não me engano foi R$ 350,00) e agendei novamente a prova
+Após a minha reprovação, pensei até em não realizar o exame novamente, fiquei um pouco frustrado e também desanimado. Passados 4 dias eu parei pra refletir sobre o acontecido e então decidi refazer a prova, peguei o retake (se não me engano foi R$ 350,00) e agendei novamente a prova
 
 Dessa vez me preparei adequadamente, descansei e dormi bem no dia anterior, então, no sábado novamente comecei a prova, dessa vez todas a máquinas foram diferentes da primeira
 
