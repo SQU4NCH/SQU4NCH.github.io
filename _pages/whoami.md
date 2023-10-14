@@ -21,6 +21,7 @@ author_profile: true
 ## ~$ Some Certifications
 <p align="left">
     <img src="https://security.ine.com/wp-content/uploads/2023/08/eJPT-1.png" alt="ejptv2" width="80" height="80"/>
+    <img src="https://sec4us.com.br/static/images/logo-scmpa.png" alt="scmpa" width="90" height="90"/>
     <img src="https://sec4us.com.br/static/images/logo-scwap.png" alt="scwap" width="90" height="90"/> 
     <img src="/assets/images/main/dcpt-logo.png" alt="dcpt" width="110" height="90"/> 
 </p>
