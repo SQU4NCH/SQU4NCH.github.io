@@ -12,7 +12,6 @@ author_profile: true
 - Currently preparing for the eWPTX and OSWE certifications
 
 ## ~$ Formal Education
-- Undergraduate in Computer Science
 - Degree in Cyber Defense
 - University extension in Cyberwarfare and Terrorism
 - Postgraduate Degree in Offensive Security and Cyber Intelligence
