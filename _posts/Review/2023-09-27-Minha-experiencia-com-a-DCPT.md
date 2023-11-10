@@ -5,7 +5,7 @@ header:
   teaser: /assets/images/DCPT/00.png
   overlay_image: /assets/images/DCPT/00.png
   overlay_filter: 0.5
-ribbon: DarkSlateGray
+ribbon: Firebrick
 excerpt: "Nessa postagem falo um pouco sobre a minha experiência com a DCPT, desde a preparação até a realização do exame"
 description: "Nessa postagem falo um pouco sobre a minha experiência com a DCPT, desde a preparação até a realização do exame"
 categories:
