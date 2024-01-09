@@ -2,8 +2,8 @@
 title: "Minha experiência com a DCPT"
 classes: wide
 header:
-  teaser: /assets/images/DCPT/00.png
-  overlay_image: /assets/images/DCPT/00.png
+  teaser: /assets/images/DCPT/00.jpg
+  overlay_image: /assets/images/DCPT/00.jpg
   overlay_filter: 0.5
 ribbon: Firebrick
 excerpt: "Nessa postagem falo um pouco sobre a minha experiência com a DCPT, desde a preparação até a realização do exame"
