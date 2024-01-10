@@ -36,7 +36,7 @@ Durante o curso são abordados temas como: Arquitetura do Android, Engenharia Re
 
 Sinceramente eu achei o curso bem desatualizado, as vulnerabilidades abordadas durante o curso são bem antigas e são muito difíceis de serem encontradas hoje em dia. Durante o curso também não é ensinado nada sobre proteções e quebra de proteções. Por esses motivos eu achei o curso bem distante da realidade 
 
-Talvez, se você está começando o seus estudos na área de mobile seja uma boa opção fazer o curso para pegar algumas bases que vão ajudar durante o seu aprendizado, mas se você já tem uma noção mínima de como um teste mobile funciona, acredito que o curso não vai valer a pena
+Talvez, se você está começando os seus estudos na área de mobile seja uma boa opção fazer o curso para pegar algumas bases que vão ajudar durante o seu aprendizado, mas se você já tem uma noção mínima de como um teste mobile funciona, acredito que o curso não vai valer a pena
 
 # A prova
 
