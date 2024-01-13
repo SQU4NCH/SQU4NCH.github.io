@@ -1,6 +1,6 @@
 ---
 title: "Wi-fi Cheat Sheet"
-permalink: /wifi-cs/
+permalink: /ct/wifi-cs/
 layout: archive
 author_profile: true
 ---

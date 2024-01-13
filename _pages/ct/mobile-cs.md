@@ -1,6 +1,6 @@
 ---
 title: "Mobile Cheat Sheet"
-permalink: /mobile-cs/
+permalink: /ct/mobile-cs/
 layout: archive
 author_profile: true
 ---
