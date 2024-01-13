@@ -283,3 +283,7 @@ defaults:
       comments: false
       share: true
       related: false
+
+after_footer_scripts:
+  - https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
+  - assets/js/clipboard.js
