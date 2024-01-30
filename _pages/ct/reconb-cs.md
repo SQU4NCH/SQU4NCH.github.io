@@ -1,5 +1,5 @@
 ---
-title: "Wi-fi Cheat Sheet"
+title: "Recon / Bug Bounty Cheat Sheet"
 permalink: /ct/reconb-cs/
 layout: archive
 author_profile: true

@@ -1,5 +1,5 @@
 ---
-title: "Wi-fi Cheat Sheet"
+title: "AD Cheat Sheet"
 permalink: /ct/ad-cs/
 layout: archive
 author_profile: true
