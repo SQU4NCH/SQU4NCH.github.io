@@ -133,7 +133,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      # url: 
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -280,9 +280,9 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: false
+      comments: false ##
       share: true
-      related: false
+      related: false ##
 
 after_footer_scripts:
   - https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
