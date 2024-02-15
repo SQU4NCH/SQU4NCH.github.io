@@ -239,7 +239,7 @@ Estrutura do data:
 # Bypassing Sanitization
 ## Removing HTML Tags
 
-Frequentemente os mecanismos de segurança acabam sanitizando potenciais vetores de ataque XSS. O mais comum é o HTML encode que troca alguns caracteres como: < (&lt;) e > (&gt;). Em algumas situações o filtro vai remover a palavra chave como a tag \<script>
+Frequentemente os mecanismos de segurança acabam sanitizando potenciais vetores de ataque XSS. O mais comum é o HTML encode que troca alguns caracteres como: < (```&lt;```) e > (```&gt;```). Em algumas situações o filtro vai remover a palavra chave como a tag \<script>
 
 Uma má configuração comum é remover somente o primeiro encontro da expressão, isso permite, por exemplo, realizar o bypass da seguinte maneira:
 
@@ -272,7 +272,9 @@ Imaginamos o seguinte cenário:
 </script>
 ```
 
-Nosso payload é injetado no lugar de "randomkey". Podemos tentar realizar o bypass enviando também uma \\. Exemplo:
+Nosso payload é injetado no lugar de "randomkey". Podemos tentar realizar o bypass enviando também uma "\\". 
+
+Exemplo:
 
 ```javascript
 randomkey' alert(1); //   <= Payload enviado
