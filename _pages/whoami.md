@@ -28,3 +28,5 @@ author_profile: true
 
 ## ~$ CVEs
 - CVE-2023-0125
+- CVE-2024-2479
+- CVE-2024-2480
