@@ -118,9 +118,14 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/ltxsecurity/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter"
+      url: "https://twitter.com/SQU4NCH"
     - label: "TryHackMe"
       icon: "fab fa-fw fas fa-user-secret"
       url: "https://tryhackme.com/p/SQU4NCH"
+
+
 
 # Site Footer
 footer:
