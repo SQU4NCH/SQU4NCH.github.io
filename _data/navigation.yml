@@ -1,7 +1,5 @@
 # main links
 main:
-  - title: "Cheat Sheets"
-    url: /cheatsheet
   - title: "Posts"
     url: /categories
   - title: "Whoami"
