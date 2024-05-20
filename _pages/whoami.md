@@ -19,7 +19,7 @@ author_profile: true
 
 ## ~$ Some Certifications
 <p align="left">
-    <!--<img src="https://security.ine.com/wp-content/uploads/2023/08/eWPTX.png" alt="ewptx" width="80" height="80"/>-->
+    <img src="https://security.ine.com/wp-content/uploads/2023/08/eWPTX.png" alt="ewptx" width="80" height="80"/>
     <img src="https://security.ine.com/wp-content/uploads/2023/08/eMAPT.png" alt="emapt" width="80" height="80"/>
     <img src="https://security.ine.com/wp-content/uploads/2023/08/eJPT-1.png" alt="ejptv2" width="80" height="80"/>
     <img src="https://sec4us.com.br/static/images/logo-scmpa.png" alt="scmpa" width="90" height="90"/>
