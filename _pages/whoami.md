@@ -7,7 +7,7 @@ author_profile: true
 
 ## ~$ Whoami
 
-- I'm a Cyber Security Auditor and Pentester
+- I'm a Pentester Specialist
 - Studying web hacking, web API security, and mobile exploitation
 - Currently preparing for the OSWE certifications
 
