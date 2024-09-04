@@ -48,7 +48,7 @@ Os pacotes enviados pela rede são divididos em tamanhos fixos para que não sej
 
 Usando esse protocolo o nó de entrada é o único que sabe a identidade do cliente, enquanto o nó de saída é o único que sabe o destino do pacote enviado (o site que está sendo acessado), os demais nós somente compartilham os pacotes criptografados. Os nós utilizados na comunicação são selecionados aleatóriamente e para isso são utilizados alguns dados de estatística da rede, preferências do cliente e histórico do cliente.
 
-# Tipos de ataque ao ecosistema Tor
+# Tipos de ataque ao ecossistema Tor
 
 Durante muito tempo vários estudos foram realizados tendo como alvo a rede TOR, tendo em vista  ela ser uma das redes mais utilizada hoje em dia. Considerando os aspectos de segurança da rede TOR, o atacante pode ter três tipos de alvo diferentes na rede:
 
