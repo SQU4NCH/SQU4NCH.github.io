@@ -8,8 +8,8 @@ author_profile: true
 ## ~$ Whoami
 
 - I'm a Pentester Specialist
-- Studying web hacking, web API security, and mobile exploitation
-- Currently preparing for the OSWE certifications
+- Experienced in web hacking, web API security, and mobile exploitation
+- Currently refining my skills in C, Assembly, exploit development, and malware development
 
 ## ~$ Formal Education
 - Degree in Cyber Defense
@@ -25,6 +25,7 @@ author_profile: true
     <img src="https://sec4us.com.br/static/images/logo-scmpa.png" alt="scmpa" width="90" height="90"/>
     <img src="https://sec4us.com.br/static/images/logo-scwap.png" alt="scwap" width="90" height="90"/> 
     <img src="/assets/images/main/dcpt-logo.png" alt="dcpt" width="110" height="90"/> 
+   <!-- <img src="/assets/images/main/logopentestplus.svg" alt="pentest+" width="110" height="90"/>-->
 </p>
 
 ## ~$ CVEs
