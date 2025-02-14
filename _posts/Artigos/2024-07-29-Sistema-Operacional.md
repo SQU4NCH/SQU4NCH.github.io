@@ -53,3 +53,7 @@ Dessa forma, esperamos que a maior parte dos detalhes sobre acesso a dispositivo
 O último ponto de vista é o de **máquina virtual**. Essa perspectiva vem da observação do sistema operacional como uma interface entre a aplicação e o hardware. Podemos imaginar como um programa de uma aplicação olhando para baixo, para o sistema operacional e para o hardware. Nessa situação, a aplicação não sabe a diferença entre o computador com um hardware muito simples e poucos recursos e um computador com hardware muito complexo e muitos recursos se o sistema operacional fornecer os mesmos recursos nos dois casos
 
 De forma simples, para a aplicação, a combinação entre hardware e sistema operacional é o "computador" onde ela será executada
+
+## Referências
+
+* STUART, Brian. Princípios de sistemas de operacionais: Projetos e aplicações. 1.ed. São Paulo: Cengage Learning, 2011.

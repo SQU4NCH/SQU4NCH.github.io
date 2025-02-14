@@ -281,3 +281,9 @@ Acessando o arquivo encontramos a senha que estava salva no navegador em texto c
 Como mencionei no começo, a minha ideia aqui era mostrar que ter acesso as credenciais salvas no navegador não é algo muito difícil, e por isso não é seguro, então pare de salvar suas senhas lá
 
 O que eu mostrei aqui foi algo muito simples, porém, tente pegar a ideia da coisa toda e criar algumas aplicações mais complexas a partir dai, isso pode servir de insight durante um teste 
+
+# Referências
+
+* Blumenthal, U., Maino, F., and K. McCloghrie, "The Advanced Encryption Standard (AES) Cipher Algorithm in the SNMP User-based Security Model", RFC 3826, DOI 10.17487/RFC3826, June 2004, <https://www.rfc-editor.org/info/rfc3826>.
+* GOOGLE. Chromium Docs. User Data Storage. 2024. Disponível em: https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/user_data_storage.md. Acesso em: 05 set. 2024.
+* GOOGLE. Chromium Docs. User Data Directory. 2024. Disponível em: https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/ user_data_dir.md. Acesso em: 05 set. 2024.
