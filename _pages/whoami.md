@@ -16,6 +16,7 @@ author_profile: true
 - University extension in Cyberwarfare and Terrorism
 - Postgraduate Degree in Offensive Security and Cyber Intelligence
 - Postgraduate Degree in Ethical Hacking and CyberSecurity
+- Master's Degree in Computer Science
 
 ## ~$ Some Certifications
 <p align="left">
