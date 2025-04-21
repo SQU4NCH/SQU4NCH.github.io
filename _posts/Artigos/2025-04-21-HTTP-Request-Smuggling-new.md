@@ -85,6 +85,7 @@ As variantes mais comuns do HTTP Request Smuggling envolvem a manipulação comb
 - **CL.TE**: O front-end utiliza `Content-Length` para interpretar a requisição, enquanto o back-end utiliza `Transfer-Encoding: chunked`.
 - **TE.CL**: O oposto; o front-end utiliza `Transfer-Encoding`, mas o back-end usa `Content-Length`.
 - **TE.TE**: Ambos os servidores interpretam `Transfer-Encoding`, mas de forma diferente (por exemplo, um ignora o valor inválido, o outro interpreta como chunked).
+
 ### **3.3 Execução Prática de um Ataque CL.TE**
 
 Considere o seguinte cenário: o atacante envia uma requisição HTTP contendo cabeçalhos tanto `Content-Length` quanto `Transfer-Encoding`, sendo que o proxy utiliza CL e o servidor usa TE. O atacante pode, então, inserir uma segunda requisição maliciosa no corpo da requisição original. O proxy interpreta apenas a primeira, enquanto o servidor back-end processa ambas, expondo funcionalidades ou dados restritos.
