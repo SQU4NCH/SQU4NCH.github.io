@@ -11,7 +11,7 @@ description: "Artigo explicando como o HTTP Request Smuggling acontece e como ex
 categories:
   - Web Hacking
 tags:
-  - HTTP Request Smiggling
+  - HTTP Request Smuggling
   - Web
   - Artigo
 toc: true
