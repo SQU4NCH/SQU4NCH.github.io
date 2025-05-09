@@ -1,0 +1,1 @@
+alert("SQU4NCH");
