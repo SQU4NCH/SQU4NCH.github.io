@@ -5,33 +5,14 @@ layout: archive
 author_profile: true
 ---
 
-## ~$ Whoami
 
-- I'm a Pentester Specialist
-- Experienced in web hacking, web API security, and mobile exploitation
-- Currently refining my skills in C, Assembly, exploit development, and malware development
+> “I am just a child who has never grown up. I still keep asking these ‘how’ and ‘why’ questions. Occasionally, I find an answer.”<br>
+><p align="right">― Stephen Hawking</p>
 
-## ~$ Formal Education
-- Degree in Cyber Defense
-- University extension in Cyberwarfare and Terrorism
-- Postgraduate Degree in Offensive Security and Cyber Intelligence
-- Postgraduate Degree in Ethical Hacking and CyberSecurity
-- Master's Degree in Computer Science
+I'm a pentester specialist with experience in Web Hacking, Web API Security, and Mobile Exploitation. I'm a low-level programming and exploit development enthusiast, and I have been improving my skills in this area over the last years.
 
-## ~$ Some Certifications
-<p align="left">
-    <img src="https://security.ine.com/wp-content/uploads/2023/08/eWPTX.png" alt="ewptx" width="80" height="80"/>
-    <img src="https://security.ine.com/wp-content/uploads/2023/08/eMAPT.png" alt="emapt" width="80" height="80"/>
-    <img src="https://security.ine.com/wp-content/uploads/2023/08/eJPT-1.png" alt="ejptv2" width="80" height="80"/>
-    <img src="https://sec4us.com.br/static/images/logo-scmpa.png" alt="scmpa" width="90" height="90"/>
-    <img src="https://sec4us.com.br/static/images/logo-scwap.png" alt="scwap" width="90" height="90"/> 
-    <img src="/assets/images/main/PenTest+.png" alt="pentest+" width="130" height="130"/>
-    <img src="/assets/images/main/dcpt-logo.png" alt="dcpt" width="110" height="90"/> 
-</p>
+Outside of work, I like to play CTF and participate in conferences like H2HC, BSides, etc...
 
-## ~$ CVEs
-- CVE-2023-0125
-- CVE-2024-2479
-- CVE-2024-2480
-- CVE-2024-29637
-- CVE-2024-29638
+I have a Degree in Cyber Defense, and currently I'm doing a master's degree in Computer Science at the Federal Technological University of Paraná (UTFPR). I also hold some security certifications, such as eWPTX, eMAPT, eJPT, Pentest+, DCPT, SCMPA, and SCWAP.
+
+Feel free to reach out (all my social media are on the left).
