@@ -78,7 +78,7 @@ Como se pode ver, o último commit do repositório é o "544b1f6...".
 
 ![](/assets/images/Git-Commit/01.png){: .align-center}
 
-Acessando o conteúdo co commit, é possível ver a mensagem "secret stuff".
+Acessando o conteúdo do commit, é possível ver a mensagem "secret stuff".
 
 ![](/assets/images/Git-Commit/02.png){: .align-center}
 
