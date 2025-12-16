@@ -4,7 +4,7 @@ menu: false
 date: '2020-02-27 01:53:59'
 title: Whoami
 description: Some description.
-permalink: /Whoami/
+permalink: /whoami/
 ---
 
 ## Hi, I'm Leonardo Teodoro (SQU4NCH)
