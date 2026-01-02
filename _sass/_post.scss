@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   padding-bottom: rem(40px);
+  text-align: justify;
 
   @include media(">=sm") {
     max-width: rem(1100px);
@@ -32,6 +33,7 @@
 .post-content {
   overflow-x: auto;
   padding: rem(40px) 0;
+  text-align: justify;
 
   &.fullwidth {
     padding: rem(60px) rem(10px) 0;
@@ -85,6 +87,7 @@
     line-height: 1.2;
     margin: rem(5px) auto rem(10px);
     padding-top: 0;
+    text-align: left;
   }
 
   p.post-subtitle {
