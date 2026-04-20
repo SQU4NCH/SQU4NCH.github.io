@@ -2,6 +2,96 @@
 <html lang="{{ site.language }}" class="no-js">
     {% include head.html %}
     <body class="has-push-menu">
+        <style>
+            
+            :root {
+                --post-bg: #ffffff;
+                --post-text: #333333;
+                --post-heading: #111111;
+                --post-link: #007bff;
+                --post-meta: #888888;
+                --post-block-bg: #f8f9fa;
+                --post-border: #e9ecef;
+                --post-code: #c7254e;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --post-bg: #121212;
+                    --post-text: #cccccc;
+                    --post-heading: #ffffff;
+                    --post-link: #4da6ff;
+                    --post-meta: #aaaaaa;
+                    --post-block-bg: #1e1e1e;
+                    --post-border: #333333;
+                    --post-code: #ff7b72;
+                }
+                
+            }
+
+            html.dark-mode, body.dark-mode, html.dark, body.dark {
+                --post-bg: #121212;
+                --post-text: #cccccc;
+                --post-heading: #ffffff;
+                --post-link: #4da6ff;
+                --post-meta: #aaaaaa;
+                --post-block-bg: #1e1e1e;
+                --post-border: #333333;
+                --post-code: #ff7b72;
+            }
+
+           
+            body.has-push-menu, .post, .post-content, .see-also, .staff, .author, .post-author, footer, .footer, .share, .comments, #disqus_thread, .subscription, .recommendation {
+                background-color: var(--post-bg) !important;
+                color: var(--post-text) !important;
+            }
+            .post-content p, .post-content li, .staff p, .author p, .post-author p, footer p, .footer p, footer span, .footer span, .staff .name, .author .name, .post-author .name, .staff .position, .author .position, .post-author .position {
+                color: var(--post-text) !important;
+            }
+            .post-title, .post-subtitle, .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6, .see-also h2, .see-also h3, .staff h2, .author h2, .post-author h2, footer h2, .footer h2, .comments h2, .share h2, .subscription h2 {
+                color: var(--post-heading) !important;
+            }
+            .post-content a, .see-also a:hover h3, .staff a, .author a, .post-author a, footer a, .footer a {
+                color: var(--post-link) !important;
+            }
+            .post-content blockquote {
+                background-color: var(--post-block-bg) !important;
+                border-left: 4px solid var(--post-link) !important;
+                color: var(--post-text) !important;
+            }
+            .post-content code {
+                background-color: var(--post-block-bg) !important;
+                color: var(--post-code) !important;
+                word-break: break-word !important;
+            }
+            .post-content pre code {
+                background-color: transparent !important;
+                color: var(--post-text) !important;
+            }
+            .post-content .highlighter-rouge {
+                max-width: 800px !important; /* Limita a largura do bloco para acompanhar o texto */
+                margin-left: auto !important; /* Centraliza horizontalmente */
+                margin-right: auto !important;
+            }
+            .post-content pre {
+                background-color: var(--post-block-bg) !important;
+                border-color: var(--post-border) !important;
+                color: var(--post-text) !important;
+                max-width: 800px !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                overflow-x: auto !important;
+            }
+            .post-info, .post-info span, .post-info time {
+                color: var(--post-meta) !important;
+            }
+            .post-info svg {
+                fill: var(--post-meta) !important;
+            }
+            .see-also, .staff, .author, .post-author, footer, .footer, .comments, .share, .subscription {
+                border-top: 1px solid var(--post-border) !important;
+            }
+        </style>
         {% include minutes-to-read.html %}
         {% include svg-icons.html %}
         {% include header.html %}
