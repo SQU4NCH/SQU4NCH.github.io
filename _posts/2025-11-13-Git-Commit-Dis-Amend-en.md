@@ -16,6 +16,8 @@ tags:
   - Paper 
 author: squ4nch
 paginate: false
+toc: true
+lang: en
 ---
 
 

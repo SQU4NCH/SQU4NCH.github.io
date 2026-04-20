@@ -16,6 +16,7 @@ tags:
   - DCPT
 author: squ4nch
 paginate: false
+toc: true
 ---
 
 Nessa postagem, vou falar um pouco sobre toda a minha experiência com a DCPT, desde a preparação até a realização da prova, e passar algumas dicas que acho interessante pra quem pensa em tirar essa certificação

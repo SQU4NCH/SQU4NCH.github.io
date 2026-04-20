@@ -18,6 +18,7 @@ tags:
   - Artigo 
 author: squ4nch
 paginate: false
+toc: true
 ---
 
 # Introdução

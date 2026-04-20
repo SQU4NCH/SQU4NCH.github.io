@@ -16,6 +16,7 @@ tags:
   - Burp
 author: squ4nch
 paginate: false
+toc: true
 ---
 
 Quando falamos de testes em aplicativos mobile, conseguir interceptar o tráfego do app com a API / Backend é fundamental para o sucesso da exploração. Nesse post vou mostrar uma das maneiras possíveis de se fazer isso.

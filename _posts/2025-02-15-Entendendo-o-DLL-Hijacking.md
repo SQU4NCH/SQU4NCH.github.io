@@ -14,6 +14,7 @@ tags:
   - Desenvolvimento de Malwares
 author: squ4nch
 paginate: false
+toc: true
 ---
 
 

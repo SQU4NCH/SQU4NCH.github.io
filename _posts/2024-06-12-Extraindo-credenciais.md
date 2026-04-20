@@ -17,6 +17,7 @@ tags:
   - Python
 author: squ4nch
 paginate: false
+toc: true
 ---
 
 
