@@ -1,7 +1,7 @@
 ---
 date: 2025-11-11 23:48:05
 layout: post
-title: 'Git Dis-amend: The Danger of "Rewriting" History'
+title: '[EN] Git Dis-amend: The Danger of "Rewriting" History'
 subtitle: 
 description: >-
   In this article, I show possible ways to abuse the behavior of the `git commit --amend` command.
