@@ -56,14 +56,17 @@
                 fill: var(--post-heading) !important;
             }
 
-            .post-content p, .post-content li, .staff p, .author p, .post-author p, footer p, .footer p, footer span, .footer span, .staff .name, .author .name, .post-author .name, .staff .position, .author .position, .post-author .position {
+            .post-content p, .post-content li, .post-content ol, .post-content ul, .staff p, .author p, .post-author p, footer p, .footer p, footer span, .footer span, .staff .name, .author .name, .post-author .name, .staff .position, .author .position, .post-author .position {
                 color: var(--post-text) !important;
+                max-width: 1100px !important;
             }
             .post-title, .post-subtitle, .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6, .see-also h2, .see-also h3, .staff h2, .author h2, .post-author h2, footer h2, .footer h2, .comments h2, .share h2, .subscription h2 {
                 color: var(--post-heading) !important;
+                max-width: 1100px !important;
             }
             .post-content a, .see-also a:hover h3, .staff a, .author a, .post-author a, footer a, .footer a {
                 color: var(--post-link) !important;
+                max-width: 1100px !important;
             }
             .post-content blockquote {
                 background-color: var(--post-block-bg) !important;
@@ -80,7 +83,7 @@
                 color: var(--post-text) !important;
             }
             .post-content .highlighter-rouge {
-                max-width: 800px !important; 
+                max-width: 1100px !important; 
                 margin-left: auto !important; 
                 margin-right: auto !important;
             }
@@ -88,13 +91,13 @@
                 background-color: var(--post-block-bg) !important;
                 border-color: var(--post-border) !important;
                 color: var(--post-text) !important;
-                max-width: 800px !important;
+                max-width: 1100px !important;
                 margin-left: auto !important;
                 margin-right: auto !important;
                 overflow-x: auto !important;
             }
             .post-content table {
-                max-width: 800px !important;
+                max-width: 1100px !important;
                 width: 100% !important;
                 margin: 2rem auto !important;
                 display: block !important;
@@ -109,19 +112,28 @@
                 background-color: var(--post-block-bg) !important;
             }
             .post-content mjx-container[display="true"] {
-                max-width: 800px !important;
+                max-width: 1100px !important;
                 margin: 2rem auto !important;
                 text-align: center !important;
             }
             .post-cover {
-                width: 50%;             
+                width: 70%;
+                max-width: 1100px !important;             
                 height: 300px;          
                 object-fit: cover;       
                 object-position: center; 
                 border-radius: 8px;      
                 margin-bottom: 2rem;
             }
-            
+            .toc {
+                max-width: 1100px !important;
+                width: 100% !important;
+                margin: 2rem auto !important;
+                display: block !important;
+                overflow-x: auto !important;
+                border-collapse: collapse;
+            }
+
             .post-info, .post-info span, .post-info time {
                 color: var(--post-meta) !important;
             }
