@@ -31,7 +31,7 @@ linkedin_username: leo-teodoro
 
 
 # Posts Settings
-show_time_bar: true
+show_time_bar: false
 show_modal_on_exit: false
 show_modal_on_finish_post: false
 two_columns_layout: false
@@ -43,7 +43,7 @@ url: "" # the base hostname & protocol for your site
 google_analytics: "UA-XXXXXXXX-X"
 language: "en"
 categories_folder: category
-sent_message_url: "/contact/message-sent/"
+sent_message_url: ""
 
 
 # Build settings

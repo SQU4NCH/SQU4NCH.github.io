@@ -7,3 +7,6 @@ gem "jekyll"
 gem "jekyll-paginate"
 gem "jekyll-paginate-content"
 gem "json"
+gem "webrick"
+
+gem "wdm", ">= 0.1.0", :platforms => [:mingw, :x64_mingw, :mswin]
